@@ -5,18 +5,20 @@ public class lab2 {
         // Tworzenie obiektu Scanner do odczytu danych z konsoli
         Scanner scanner = new Scanner(System.in);
 
-        // Prośba o wprowadzenie imienia
-        System.out.print("Podaj swoje imię: ");
-        String imie = scanner.nextLine();
-        imie = vovels_to_z(imie);
+
 
         // Prośba o wprowadzenie pseudonimu
         System.out.print("Podaj swoj pseudonim: ");
         String pseudonim = scanner.nextLine();
         pseudonim = vovels_to_z(pseudonim);
 
-        System.out.println("Hello world\n" + "imie:" +imie
-            + "\npseudonim: " + pseudonim); 
+        // Prośba o wprowadzenie imienia
+        System.out.print("Podaj swoje imię: ");
+        String imie = scanner.nextLine();
+        imie = vovels_to_z(imie);
+
+        System.out.println("Hello world\n" + "pseudonim: "
+                + pseudonim + "\nimie:" +imie);
 
         // Zamykanie obiektu Scanner
         scanner.close();
