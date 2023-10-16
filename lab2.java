@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class lab2 {  
-    public static void main(String args[]) { 
+    public static void main(String[] args) {
     
         // Tworzenie obiektu Scanner do odczytu danych z konsoli
         Scanner scanner = new Scanner(System.in);
@@ -13,7 +13,7 @@ public class lab2 {
         System.out.print("Podaj swoj pseudonim: ");
         String pseudonim = scanner.nextLine();
 
-        System.out.println("Hello world\n" + "imie: \n" +imie 
+        System.out.println("Hello world\n" + "imie:" +imie
             + "\npseudonim: " + pseudonim); 
 
         // Zamykanie obiektu Scanner
