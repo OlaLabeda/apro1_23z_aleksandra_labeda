@@ -21,6 +21,7 @@ public class lab2 {
                 + pseudonim + "\nimie:" +imie);
 
         // Zamykanie obiektu Scanner
+
         scanner.close();
    
         
