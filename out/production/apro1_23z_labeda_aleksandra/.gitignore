@@ -1,0 +1,8 @@
+
+#compiled class files
+*.class
+#log files
+*.log
+#intellij files
+.idea/ 
+
