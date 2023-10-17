@@ -7,8 +7,6 @@ public class lab2 {
         // Tworzenie obiektu Scanner do odczytu danych z konsoli
         Scanner scanner = new Scanner(System.in);
 
-
-
         // Prośba o wprowadzenie pseudonimu
         System.out.print("Podaj swoj pseudonim: ");
         String pseudonim = scanner.nextLine();
@@ -25,10 +23,8 @@ public class lab2 {
                 + pseudonim + "\nimie:" +imie);
 
         // Zamykanie obiektu Scanner
-
         scanner.close();
-   
-        
+
     }
     public static String vovels_to_z (String tekst) {
         // Zamienia wszystkie samogłoski na "z" (zarówno małe, jak i duże litery)
@@ -40,10 +36,14 @@ public class lab2 {
     }
 
     public static String odwrocSlowa(String tekst) {
+        //utorzenie pomocniczej tablicy znakow
         char[] tablicaZnakow = tekst.toCharArray();
+        //uwtorzenie znacznikow poruszajacyh sie po tekscie
+        //ktory ma zostac odwrocony
         int start = 0;
         int end = tekst.length() - 1;
 
+        //petla przechodzaca po znakach tekstu odwracajaca ich kolejnosc
         while (start < end) {
             char temp = tablicaZnakow[start];
             tablicaZnakow[start] = tablicaZnakow[end];
