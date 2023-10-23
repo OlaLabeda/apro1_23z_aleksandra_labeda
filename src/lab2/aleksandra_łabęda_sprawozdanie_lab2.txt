@@ -1,0 +1,54 @@
+==============================================================================================================
+SPRAWOZDANIE LAB2 
+17.10.2023 12:15
+Aleksandra Łabęda 
+325186 
+103 
+APRO1
+aleksandra.labeda.stud@pw.edu.pl
+==============================================================================================================
+
+==============================================================================================================
+O narzędziu git, do czego jest ono przydatne?
+==============================================================================================================
+
+Git jest mocno ukierunkowany na pracę zespołową oraz zarządzanie projektami, śledzenie i rozwiązywanie 
+problemów.
+Jest potężnym narzędziem do kontroli wersji, pozwalającym skutecznie zarządzać historią projektu, śledzić 
+zmiany, wracać do poprzednich wersji programu w razie potrzeby.
+Ułatwia współpracę w zespołach programistycznych, pozwalając na równoczesną pracę nad projektem.
+
+
+==============================================================================================================
+Kontrola konfliktów
+==============================================================================================================
+
+Git pomaga w rozwiązywaniu konfliktów podczas łączenia różnych wersji projektu
+
+
+==============================================================================================================
+Rozwiązywanie konfliktów
+==============================================================================================================
+
+Git dostarcza narzędzi do rozwiązywania konfliktów podczas łączenia różnych gałęzi. Konflikty mogą wystąpić, 
+gdy dwie gałęzie projektu zmieniły ten sam fragment kodu. Aby rozwiązać konflikt, narzędzia git pozwalają na 
+porównywanie zmian -> trzeba ręcznie zdecydować, która wersja kodu jest poprawna i ma być zachowana.
+Wykorzystanie narzędzi graficznych
+Korzystając Gita używałam jedynie wiersza poleceń, uważam to za wygodne i szybkie rozwiązanie po 
+zapoznaniu się z odpowiednimi poleceniami. Myślę jednak, że korzystanie z narzędzi graficznych do obsługi Gita 
+może ułatwić pracę, zwłaszcza dla początkujących użytkowników. Narzędzia te mogą oferować bardziej 
+intuicyjny interfejs do wykonywania operacji, takich jak tworzenie commitów, łączenie gałęzi czy przeglądanie 
+historii projektu.
+
+
+==============================================================================================================
+Problemy
+==============================================================================================================
+
+Wystąpiły problemy z wykonaniem modyfikacji programu – w trakcie operacji merge, które wynikały z 
+konfliktów w kodzie źródłowym między źródłową gałęzią a docelową gałęzią
+=> Konflikty te powstają, gdy Git nie jest w stanie automatycznie połączyć zmian, ponieważ te same linie kodu 
+zostały zmienione w obu gałęziach – zmiany wprowadzone w gałęzi źródłowej kolidowały z istniejącymi 
+zmianami na gałęzi docelowej. 
+Konflikty te musiały zostać rozwiązane ręcznie, co zablokowało proces mergowania do momentu, aż konflikty 
+nie zostały rozwiązane.
