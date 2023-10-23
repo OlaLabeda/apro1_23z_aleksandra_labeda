@@ -11,17 +11,22 @@ public class lab2 {
         System.out.print("Podaj swoje imię: ");
         String imie = scanner.nextLine();
         imie = odwrocSlowa(imie);
+        imie = vovels_to_z(imie);
 
         // Prośba o wprowadzenie pseudonimu
         System.out.print("Podaj swoj pseudonim: ");
         String pseudonim = scanner.nextLine();
         pseudonim = odwrocSlowa(pseudonim);
+        pseudonim = vovels_to_z(pseudonim);
 
         System.out.println("Hello world\n" + "pseudonim: " +
                 pseudonim + "\nimie: " +imie);
+
         // Zamykanie obiektu Scanner
         scanner.close();
+
     }
+
     public static String odwrocSlowa(String tekst) {
         //utorzenie pomocniczej tablicy znakow
         char[] tablicaZnakow = tekst.toCharArray();
@@ -40,5 +45,16 @@ public class lab2 {
         }
 
         return new String(tablicaZnakow);
+
+    }
+
+    public static String vovels_to_z (String tekst) {
+        // Zamienia wszystkie samogłoski na "z" (zarówno małe, jak i duże litery)
+        //replaceAll - szuka wszystkich wystapien wzorca w tekscie
+        //"[aeiouAEIOU]" <= wyrazenie regularne, znaki jakie maja zostac potencjalnie zamienione
+        // [] <=zestaw znakow
+        tekst = tekst.replaceAll("[aeiouyAEIOUY]", "z");
+        return tekst;
+
     }
 }
