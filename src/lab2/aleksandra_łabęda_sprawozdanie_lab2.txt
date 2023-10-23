@@ -52,3 +52,23 @@ zostały zmienione w obu gałęziach – zmiany wprowadzone w gałęzi źródło
 zmianami na gałęzi docelowej. 
 Konflikty te musiały zostać rozwiązane ręcznie, co zablokowało proces mergowania do momentu, aż konflikty 
 nie zostały rozwiązane.
+
+
+==============================================================================================================
+Wnioski, przemyślenia, notatki
+==============================================================================================================
+
+-Rozwiązywanie konfliktów w Git jest nieodłączną częścią pracy z tym narzędziem, szczególnie w projektach 
+zespołowych. Warto zrozumieć ten proces i umiejętnie go wykorzystywać.
+
+-Komunikacja w zespole jest kluczowa podczas rozwiązywania konfliktów i procesu mergowania. Efektywna 
+współpraca i uzgadnianie zmian pomaga uniknąć problemów.
+
+-GitLab to jedno z wielu narzędzi do zarządzania projektami opartymi na Gicie. Każde narzędzie ma swoje 
+cechy i interfejs użytkownika, więc warto wybrać to, które najlepiej odpowiada potrzebom projektu.
+
+-Praca z Gitem to umiejętność, którą można doskonalić, zdobywając praktyczne doświadczenie
+i eksperymentując z różnymi funkcjonalnościami => lepiej zrozumieć, jak efektywnie zarządzać kodem źródłowym 
+i doskonalić umiejętności związane z kontrolą wersji.
+
+
