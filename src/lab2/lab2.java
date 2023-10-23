@@ -15,8 +15,9 @@ public class lab2 {
         System.out.print("Podaj swoj pseudonim: ");
         String pseudonim = scanner.nextLine();
 
-        System.out.println("Hello world\n" + "imie: \n" +imie
-                + "\npseudonim: " + pseudonim);
+
+        System.out.println("Hello world\n" + "pseudonim: " +
+                pseudonim + "\nimie: " +imie);
 
         // Zamykanie obiektu Scanner
         scanner.close();
