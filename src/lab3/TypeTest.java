@@ -1,10 +1,11 @@
 package lab3;
 
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
+
 public class TypeTest {
-
-    //"Ćwiczenie dotyczy działania konwersji typów.
-    // W tym celu stwórzmy prosty program, w którym zdefiniujemy szereg zmiennych:"
-
     public static void main(String[] args) {
 
         // Deklaracja i przypisanie zmiennej "daysInYear" jako "short" o wartości 365.
@@ -33,15 +34,15 @@ public class TypeTest {
         // Dodanie 1 do ASCII 'a' (97). Wynik to 98.
         int value = 1 + (int) 'a';
 
-
         // Wyświetlenie wartości zmiennych.
-        System.out.println(daysInYear); // Wyświetla 365
+        System.out.println(daysInYear);  // Wyświetla 365
         System.out.println(x); // Wyświetla niestandardowy znak
         System.out.println(someNumber); // Wyświetla 555
         System.out.println(castSomeNumber); // Wyświetla 555
         System.out.println(reallyBig); // Wyświetla -3001 (ze względu na przepełnienie)
         System.out.println(letter); // Wyświetla 'b'
         System.out.println(value); // Wyświetla 98
+
 
         // Deklaracja i przypisanie zmiennej "firstFloat"
         // jako "float" o wartości 1.443543322.
@@ -81,46 +82,16 @@ public class TypeTest {
         System.out.println(division); // Wyświetla wynik dzielenia
         System.out.println(addBig); // Wyświetla wynik dodawania bardzo dużych liczb
         System.out.println(divideBig); // Wyświetla wynik dzielenia przez bardzo małą liczbę
-
-
-        /*
-
+/*
         ODPOWIEDZ NA PYTANIE DO ZADANIA
 
-        - Wartości zmiennych po prawej stronie operatora przypisania są
+                - Wartości zmiennych po prawej stronie operatora przypisania są
         rzutowane na odpowiednie typy, co jest konieczne,
         aby zachować spójność typów.
         Zmienne, na których wykonane były operacje,
         przechowują wyniki tych operacji.
 
-        PRZYKŁADY:
-
-        1. char x = (char) daysInYear;
-        - Wartość zmiennej `daysInYear` wynosi 365.
-        Po rzutowaniu na typ char wartosc jest niestandardowym znakiem.
-
-        2. short castSomeNumber = (short) someNumber;
-        - Wartość zmiennej `someNumber` wynosi 555,
-        po rzutowaniu na `short` wartość pozostaje taka sama,
-        czyli 555. Rzutowanie jest konieczne, bo int jest szerszy niż short.
-
-        3. short reallyBig = (short) 1_111_111;
-        - Wartość 1_111_111 jest poza zakresem wartości,
-        które można przechować w zmiennej short. Po rzutowaniu zachodzi
-        przepełnienie i wartość reallyBig będzie wynosić -9617.
-
-        4. char letter = 'a' + 1;
-        - Wartość 'a' jest rzutowana na jej kod ASCII,
-        czyli 97, a następnie dodawane jest 1, co daje wartość 98,
-        czyli znak 'b'. Rzutowanie jest konieczne, aby wykonać operację arytmetyczną.
-
-        5. int value = 1 + (int) 'a';
-        - Wartość 'a' jest rzutowana na jej kod ASCII,
-        czyli 97, a następnie dodawane jest 1, co daje wartość 98.
-        Rzutowanie jest konieczne, aby wykonać operację arytmetyczną.
-
-        CZYLI:
-        Jawne rzutowanie jest konieczne w przypadkach,
+                Jawne rzutowanie jest konieczne w przypadkach,
         gdy zmienne oczekują wartości innego typu niż wartość po prawej stronie przypisania.
         W przeciwnym przypadku, jeśli typy są kompatybilne, rzutowanie może być pominięte.
         Jednak zawsze należy uważać na potencjalne utraty danych lub
@@ -134,7 +105,6 @@ public class TypeTest {
         bardzo dużych lub dzielenia przez bardzo małe liczby,
         może dojść do utraty precyzji i błędów obliczeniowych.
 
-         */
-
+ */
     }
 }
