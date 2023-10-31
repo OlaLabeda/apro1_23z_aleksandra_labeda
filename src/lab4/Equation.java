@@ -18,6 +18,10 @@ public class Equation {
             if (delta < 0) {
                 System.out.println("Brak miejsc zerowych!");
             }
+            else if (delta == 0) {
+                float p0 = -b / (2 * a);
+                System.out.println("Miejsce zerowe: " + p0);
+            }
             else {
                 float p1 = 0, p2 = 0;
                 float pierDelta = (float)Math.sqrt(delta);
@@ -28,13 +32,12 @@ public class Equation {
             }
         }
     }
-
     public void calculateAndPrintRoot(float a, float b) {
         if (a == 0) {
             if (b != 0)
                 System.out.println("Brak miejsc zerowych!");
             else
-                System.out.println("Równanie tożsamościowe.");
+                System.out.println("Nieskonczenie wiele miejsc zerowych (y = 0)");
         }
         else {
             float pierwiastek = -b / a;
