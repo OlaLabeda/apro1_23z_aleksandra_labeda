@@ -1,4 +1,8 @@
 package lab4;
+/**
+ * @author Aleksandra Łabęda,
+ * Aleksandra Wasilewska
+ */
 
 import java.util.Scanner;
 

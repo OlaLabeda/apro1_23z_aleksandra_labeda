@@ -1,4 +1,8 @@
 package lab4;
+/**
+ * @author Aleksandra Łabęda,
+ * Aleksandra Wasilewska
+ */
 
 public class Palindrome {
     public static void main(String[] arguments) {

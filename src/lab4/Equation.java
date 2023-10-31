@@ -1,5 +1,8 @@
 package lab4;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Aleksandra Wasilewska
+ */
 public class Equation {
     public static void main(String[] args) {
         float a = 0, b = 2, c = 1; // set a, b, c
