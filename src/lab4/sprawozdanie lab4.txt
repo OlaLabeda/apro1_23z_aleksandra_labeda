@@ -2,29 +2,45 @@ Aleksandra Łabęda, Aleksandra Wasilewska
 103, 31.10.2023
 Sprawozdanie lab4
 
-===========================================================================================
+==============================================================================================
 Zadanie Palindrom
-===========================================================================================
+==============================================================================================
 Zadanie palindrom w zaproponowanym pseudokodzie sprawdza każdy możliwy substring pod kątem 
-bycia palindromem. Dodatkowo, ze względu na ilość zagnieżdżeń, pseudokod wydawał się dość trudny w analizie. Ostateczna implementacja sprowadziła się do zaimplementowania 3 funkcji, findLongestPalindrome, analyzeSubstring oraz isPalindrome.
- Jest to dość wymagające czasowo rozwiązanie, szacunkowo O(n^3). Można rozwiązać to zadanie na kilka innych sposobów, w kodzie zaprezentowano więc odrobinę bardziej wydajną implementacje o złożoności O(n^2) które bazuje na iteracji po słowie i rozszerzaniu indeksów zewnętrznych w wypadku zauważenia palindromiczności (co wykonuje funkcja expandAroundCenter). Kod jest szczegółowo wykomentowany.
+bycia palindromem. Dodatkowo, ze względu na ilość zagnieżdżeń, pseudokod wydawał się dość 
+trudny w analizie. Ostateczna implementacja sprowadziła się do zaimplementowania 3 funkcji, 
+findLongestPalindrome, analyzeSubstring oraz isPalindrome.
+Jest to dość wymagające czasowo rozwiązanie, szacunkowo O(n^3). Można rozwiązać to zadanie 
+na kilka innych sposobów, w kodzie zaprezentowano więc odrobinę bardziej wydajną 
+implementacje o złożoności O(n^2) które bazuje na iteracji po słowie i rozszerzaniu indeksów 
+zewnętrznych w wypadku zauważenia palindromiczności (co wykonuje funkcja expandAroundCenter). 
+Kod jest szczegółowo wykomentowany.
  
-===========================================================================================
+==============================================================================================
 Zadanie Equation
-===========================================================================================
+==============================================================================================
 Powyższe zadanie było dość proste, głównym problmemem było zauważenie wszystkich możliwych 
-przypadków i skuteczne uwzględnienie ich, a także na przykład zauważenie, że warto wykorzystać funkcje CalculateAndPrintRoot dwuargumentową (dla funkcji liniowej) w przypadku gdy wspołczynnik a funkcji kwadratowej jest równy zeru.  
+przypadków i skuteczne uwzględnienie ich, a także na przykład zauważenie, że warto wykorzystać 
+funkcje CalculateAndPrintRoot dwuargumentową (dla funkcji liniowej) w przypadku gdy 
+wspołczynnik a funkcji kwadratowej jest równy zeru.  
 
-===========================================================================================
+==============================================================================================
 Zadanie Fabryka
-===========================================================================================
-W zadaniu fabryka zostało zaimplementowane rozwiązanie, które iterowało się po każdej kolejnej możliwej ilości dni, aż do momentu, gdy suma całkowita wyprodukowanych przez wszytskie maszyny jednostek towaru nie była mniejsza bądź równa docelowej ilości. Wykorzystano fakt, że każda z maszyn kończyła produkcję jednej jednostki towaru w dniu podzielnym bez reszty przez szybkość pracy:
+==============================================================================================
+W zadaniu fabryka zostało zaimplementowane rozwiązanie, które iterowało się po każdej 
+kolejnej możliwej ilości dni, aż do momentu, gdy suma całkowita wyprodukowanych przez 
+wszytskie maszyny jednostek towaru nie była mniejsza bądź równa docelowej ilości. Wykorzystano 
+fakt, że każda z maszyn kończyła produkcję jednej jednostki towaru w dniu podzielnym bez 
+reszty przez szybkość pracy:
 		liczbaDni % szybkoscPracy[i] == 0
-Iterowano się więc po wszystkich maszynach i dodawano odpowiednio jednostki towaru jeśli były one wyprodukowane.
+Iterowano się więc po wszystkich maszynach i dodawano odpowiednio jednostki towaru jeśli 
+były one wyprodukowane.
 
-Wniosek: Istnieje również możliwość rozwiązania tego zadania przy użyciu binary searcha - jest wtedy szansa na dużo szybsze znalezienie odpowiedniej ilości dni, jednak w przypadku zadanego polecenia, nie zostały podane wartości brzegowe co odwiodło nas od tej implementacji. 
+Wniosek: Istnieje również możliwość rozwiązania tego zadania przy użyciu binary searcha - jest 
+wtedy szansa na dużo szybsze znalezienie odpowiedniej ilości dni, jednak w przypadku zadanego
+polecenia, nie zostały podane wartości brzegowe co odwiodło nas od tej implementacji. 
 
-===========================================================================================
+==============================================================================================
 Wnioski
-===========================================================================================
-Zadania same w sobie nie sprawiały raczej dużych kłopotów, jednak zauważalne jest to, że samo zrozumienie polecenia czasem jest najtrudniejszym elementem problemu.
+==============================================================================================
+Zadania same w sobie nie sprawiały raczej dużych kłopotów, jednak zauważalne jest to, że samo
+zrozumienie polecenia czasem jest najtrudniejszym elementem problemu.
