@@ -1,9 +1,10 @@
 package lab3;
+
+import java.util.Arrays;
 /**
  * @author Aleksandra Łabęda,
  * Bartosz Czerwiński
  */
-import java.util.Arrays;
 public class Sorting {
     public int[] bubbleSort(int[] input) {
         int[] copy = new int[input.length];
