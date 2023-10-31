@@ -1,10 +1,10 @@
 package lab4;
+
+import java.util.Scanner;
 /**
  * @author Aleksandra Łabęda,
  * Aleksandra Wasilewska
  */
-
-import java.util.Scanner;
 
 public class Fabryka {
     public static int calculateNumberOfDays(int jednostkiTowaru, int liczbaMaszyn, int[] szybkoscPracy) {
