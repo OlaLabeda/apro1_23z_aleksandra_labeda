@@ -1,11 +1,14 @@
 package lab3;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /**
  * @author Aleksandra Łabęda,
  * Bartosz Czerwiński
  */
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+ 
 public class Race {
     public static void main (String[] arguments) {
         String[] names = {
