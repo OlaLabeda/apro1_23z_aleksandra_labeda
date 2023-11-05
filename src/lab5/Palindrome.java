@@ -4,10 +4,52 @@ package lab5;
  */
 
 public class Palindrome {
-    public static void main(String[] arguments) {
-        String word = "abbcd";
-        String longestPalindrome = findLongestPalindrome2(word);
-        System.out.println(longestPalindrome);
+    /**
+     * original text of the palindrome
+     * readable for human
+     */
+    private String palindrome = null;
+    /**
+     *  text of the palindrome without spaces and other
+     *  signs that are not letters, for comparing palindromes
+     */
+    private String rawPalindrome = null;
+
+    /**
+     * @return original version of palindrome
+     */
+    public String getPalindrome() {
+    // Write you code here
+        return this.palindrome;
+    }
+    /**
+     * @return version of palindrome without additional signs
+     */
+    public String getRawPalindrome() {
+        // Write you code here
+        return this.rawPalindrome;
+    }
+
+    /**
+     * @return makes version of palindrome without additional signs
+     */
+    public String makeRawPalindrome(String palindrome) {
+        if (palindrome == null) {
+            return null; // Handle null
+        }
+
+        StringBuilder rawPalindromeBuilder = new StringBuilder();
+        for (char ch : palindrome.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                rawPalindromeBuilder.append(ch);
+            }
+        }
+
+        return rawPalindromeBuilder.toString();
+    }
+    @Override
+    public String toString() {
+        return this.palindrome;
     }
 
     //O(n^3) checking all possible substrings
