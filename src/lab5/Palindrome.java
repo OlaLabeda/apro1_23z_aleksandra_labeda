@@ -2,6 +2,7 @@ package lab5;
 /**
  * @author Aleksandra Łabęda,
  */
+
 import java.util.Hashtable;
 
 public class Palindrome {
@@ -19,7 +20,9 @@ public class Palindrome {
     public static int isPalindromeCounter = 0;
 
     public Palindrome(String palindrome) {
+
         this.palindrome = palindrome;
+        this.rawPalindrome = makeRawPalindrome(palindrome);
     }
     /**
      *  text of the palindrome without spaces and other
@@ -31,15 +34,16 @@ public class Palindrome {
      * @return original version of palindrome
      */
     public String getPalindrome() {
-    // Write you code here
-        return this.palindrome;
+        // Write you code here
+        return palindrome;
     }
+
     /**
      * @return version of palindrome without additional signs
      */
     public String getRawPalindrome() {
         // Write you code here
-        return this.rawPalindrome;
+        return rawPalindrome;
     }
 
     /**
@@ -59,25 +63,51 @@ public class Palindrome {
 
         return rawPalindromeBuilder.toString();
     }
+
     @Override
     public String toString() {
 
-        return this.palindrome;
+        return palindrome;
     }
-
 
     @Override
     public boolean equals(Object anObject) {
-// Write your code here
-        return true;
+        // Sprawdzamy, czy obiekt jest równy samemu sobie
+        if (this == anObject) {
+            return true;
+        }
+
+        // Sprawdzamy, czy obiekt nie jest nullem
+        if (anObject == null) {
+            return false;
+        }
+
+        // Sprawdzamy, czy obiekt anObject jest instancją klasy Palindrome
+        if (!(anObject instanceof Palindrome)) {
+            return false;
+        }
+
+        // Konwertujemy obiekt anObject na Palindrome
+        Palindrome otherPalindrome = (Palindrome) anObject;
+
+        // Porównujemy tekst palindromów
+        if (this.getRawPalindrome() == null && otherPalindrome.getRawPalindrome() == null) {
+            return true; // Oba palindromy są nullem, więc uważamy je za równe
+        } else if (this.getRawPalindrome() != null) {
+            return this.getRawPalindrome().equals(otherPalindrome.getRawPalindrome());
+        } else {
+            return false; // Jedno z palindromów jest nullem, więc uważamy je za różne
+        }
     }
+
 
     @Override
     public int hashCode() {
-    // Write your code here
-        return 1;
+        if (palindrome == null) {
+            return 0;
+        }
+        return palindrome.hashCode();
     }
-
 
 
     public static void main(String[] args) {
@@ -96,35 +126,42 @@ public class Palindrome {
         String longestPalindrome = findLongestPalindrome(word);
         System.out.println("longestPalindrome: " + longestPalindrome);
 
+        Palindrome p4 = new Palindrome("jajjaj");
+        Palindrome p5 = new Palindrome("kamil slimak");
 
-        Palindrome p4 = new Palindrome("ala");
-        Palindrome p5 = new Palindrome("Szybki lis skacze po gorach");
-        Palindrome p6 = new Palindrome("W deszczowy dzien spacerujnc po lesie " +
-                "natkneliśmy sie na ukryta w gaszczu chatke, ktora porastaly dzikie winorosnie. " +
-                "Wnetrze okazalo sie niezwykle – pelne tajemniczych artefaktow i starych ksiag. " +
-                "Zagubilismy sie w tych zapomnianych historiach, gdzie czas wydawal sie zatrzymany. " +
-                "Po kilku godzinach wrocilismy do rzeczywistosci z usmiechem na twarzach, gotowi na dalsza " +
-                "podroz przez to magiczne miejsce");
-
-        // Testowanie złożoności
-        p4.makeRawPalindrome(p4.getPalindrome());
-        p5.makeRawPalindrome(p5.getPalindrome());
-        p6.makeRawPalindrome(p6.getPalindrome());
-System.out.println(p4.getPalindrome());
-
-        findLongestPalindrome(p4.getRawPalindrome());
-        System.out.println("findLongestPalindromeCounter: " + findLongestPalindromeCounter);
-
-        analyzeSubstring(p4.getRawPalindrome());
-        System.out.println("analyzeSubstringCounter: " + analyzeSubstringCounter);
-
-        isPalindrome(p4.getRawPalindrome());
-        System.out.println("isPalindromeCounter: " + isPalindromeCounter);
+        System.out.println("p1.findLongestPalindromeCounter: " + p4.findLongestPalindromeCounter);
+        System.out.println("p2.findLongestPalindromeCounter: " + p5.findLongestPalindromeCounter);
+// recommended static field reference:
+        System.out.println("Palindrome.findLongestPalindromeCounter: " + Palindrome.findLongestPalindromeCounter);
+        System.out.println("p1.analyzeSubstringCounter: " + p4.analyzeSubstringCounter);
+        System.out.println("p2.analyzeSubstringCounter: " + p5.analyzeSubstringCounter);
 
 
+        Palindrome p6 = new Palindrome("jajjaj");
+        Palindrome p7 = new Palindrome("A man, a plan, a canal, Panama");
+        Palindrome p8 = new Palindrome("Evil eras roar, reviled." +
+                "Red roses sit on." +
+                "Newt, Santa at rat, Santa won." +
+                "Now on a known light," +
+                "wings white," +
+                "dip red stars and no." +
+                "Shine down on me." +
+                "Live, Don, evil.");
 
+        findLongestPalindrome(p6.getRawPalindrome());
+        System.out.println("p6.findLongestPalindromeCounter: " + p6.findLongestPalindromeCounter);
+        System.out.println("p6.analyzeSubstringCounter: " + p6.analyzeSubstringCounter);
+        System.out.println("p6.isPalindromeCounter: " + p6.isPalindromeCounter);
 
+        findLongestPalindrome(p7.getRawPalindrome());
+        System.out.println("p7.findLongestPalindromeCounter: " + p7.findLongestPalindromeCounter);
+        System.out.println("p7.analyzeSubstringCounter: " + p7.analyzeSubstringCounter);
+        System.out.println("p7.isPalindromeCounter: " + p7.isPalindromeCounter);
 
+        findLongestPalindrome(p8.getRawPalindrome());
+        System.out.println("p8.findLongestPalindromeCounter: " + p8.findLongestPalindromeCounter);
+        System.out.println("p8.analyzeSubstringCounter: " + p8.analyzeSubstringCounter);
+        System.out.println("p8.isPalindromeCounter: " + p8.isPalindromeCounter);
     }
 
     //O(n^3) checking all possible substrings
@@ -133,7 +170,6 @@ System.out.println(p4.getPalindrome());
         String current = "";
         String longestPalindrome = "";
         if (word == null) return null;
-        int index = 0;
         for (int i = 0; i < word.length(); i++) {
             String subword = word.substring(i, word.length());
             current = analyzeSubstring(subword);
@@ -228,6 +264,4 @@ System.out.println(p4.getPalindrome());
         //difference between indexes + 1 cuz it gives proper length of a word
         return R - L - 1;
     }
-
-
 }
