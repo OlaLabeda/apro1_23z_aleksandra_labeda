@@ -2,6 +2,7 @@ package lab5;
 /**
  * @author Aleksandra Łabęda,
  */
+import java.util.Hashtable;
 
 public class Palindrome {
     /**
@@ -9,11 +10,22 @@ public class Palindrome {
      * readable for human
      */
     private String palindrome = null;
+    private String rawPalindrome = null;
+    // Licznik wywołań metody findLongestPalindrome
+    public static int findLongestPalindromeCounter = 0;
+    // Licznik wywołań metody analyzeSubstring
+    public static int analyzeSubstringCounter = 0;
+    // Licznik wywołań metody isPalindrome
+    public static int isPalindromeCounter = 0;
+
+    public Palindrome(String palindrome) {
+        this.palindrome = palindrome;
+    }
     /**
      *  text of the palindrome without spaces and other
      *  signs that are not letters, for comparing palindromes
      */
-    private String rawPalindrome = null;
+
 
     /**
      * @return original version of palindrome
@@ -49,13 +61,78 @@ public class Palindrome {
     }
     @Override
     public String toString() {
+
         return this.palindrome;
+    }
+
+
+    @Override
+    public boolean equals(Object anObject) {
+// Write your code here
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+    // Write your code here
+        return 1;
+    }
+
+
+
+    public static void main(String[] args) {
+        Palindrome p1 = new Palindrome("kobyłamamałybok");
+        Palindrome p2 = new Palindrome("kobyła ma mały bok!");
+        Palindrome p3 = new Palindrome("elf układał kufle");
+        System.out.println("p1 == p2 : " + (p1 == p2));
+        System.out.println("p1.equals(p2) : " + p1.equals(p2));
+        Hashtable<Palindrome, String> ps = new Hashtable<>();
+        ps.put(new Palindrome("a car boso kokos obraca"), "Andrzej Pacierpnik");
+        ps.put(p2, "autor nieznany");
+        ps.put(new Palindrome("muzo, raz daj jad za rozum"), "Julian Tuwim");
+        ps.put(p3, "Tadeusz Morawski");
+        System.out.println("Autorem palindromu " + p3 + " jest " + ps.get(p3));
+        String word = "rrrrr abccba kobyłamamałybok";
+        String longestPalindrome = findLongestPalindrome(word);
+        System.out.println("longestPalindrome: " + longestPalindrome);
+
+
+        Palindrome p4 = new Palindrome("ala");
+        Palindrome p5 = new Palindrome("Szybki lis skacze po gorach");
+        Palindrome p6 = new Palindrome("W deszczowy dzien spacerujnc po lesie " +
+                "natkneliśmy sie na ukryta w gaszczu chatke, ktora porastaly dzikie winorosnie. " +
+                "Wnetrze okazalo sie niezwykle – pelne tajemniczych artefaktow i starych ksiag. " +
+                "Zagubilismy sie w tych zapomnianych historiach, gdzie czas wydawal sie zatrzymany. " +
+                "Po kilku godzinach wrocilismy do rzeczywistosci z usmiechem na twarzach, gotowi na dalsza " +
+                "podroz przez to magiczne miejsce");
+
+        // Testowanie złożoności
+        p4.makeRawPalindrome(p4.getPalindrome());
+        p5.makeRawPalindrome(p5.getPalindrome());
+        p6.makeRawPalindrome(p6.getPalindrome());
+System.out.println(p4.getPalindrome());
+
+        findLongestPalindrome(p4.getRawPalindrome());
+        System.out.println("findLongestPalindromeCounter: " + findLongestPalindromeCounter);
+
+        analyzeSubstring(p4.getRawPalindrome());
+        System.out.println("analyzeSubstringCounter: " + analyzeSubstringCounter);
+
+        isPalindrome(p4.getRawPalindrome());
+        System.out.println("isPalindromeCounter: " + isPalindromeCounter);
+
+
+
+
+
     }
 
     //O(n^3) checking all possible substrings
     public static String findLongestPalindrome(String word) {
+        findLongestPalindromeCounter++;
         String current = "";
         String longestPalindrome = "";
+        if (word == null) return null;
         int index = 0;
         for (int i = 0; i < word.length(); i++) {
             String subword = word.substring(i, word.length());
@@ -69,6 +146,8 @@ public class Palindrome {
     }
 
     public static String analyzeSubstring(String word) {
+        analyzeSubstringCounter++;
+        if (word == null) return null;
         int index = word.length();
         String substring = "";
         while (index > 0) {
@@ -83,6 +162,8 @@ public class Palindrome {
     }
 
     public static boolean isPalindrome(String word) {
+        isPalindromeCounter++;
+        if (word == null) return false;
         int i1 = 0, i2 = word.length() - 1;
         while (i2 > i1) {
             if (word.charAt(i2) != word.charAt(i1)) {
