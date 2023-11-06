@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /**
  * @author Aleksandra Łabęda,
- *
  */
 
 public class Fabryka {
