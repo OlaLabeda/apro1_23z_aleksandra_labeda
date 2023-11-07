@@ -1,6 +1,7 @@
 package lab5;
 /**
  * @author Aleksandra Łabęda,
+ * Aleksandra Wasilewska
  */
 public class Production {
     public static void main(String[] args) {

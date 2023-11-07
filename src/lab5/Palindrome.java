@@ -3,6 +3,7 @@ import java.util.Hashtable;
 
 /**
  * @author Aleksandra Łabęda,
+ * Aleksandra Wasilewska
  */
 
 public class Palindrome {
@@ -158,9 +159,11 @@ public class Palindrome {
         System.out.println("p1.analyzeSubstringCounter: " + p4.analyzeSubstringCounter);
         System.out.println("p2.analyzeSubstringCounter: " + p5.analyzeSubstringCounter);
 
-
+        //longest palindrome of length 3, ala
         Palindrome p6 = new Palindrome("Ala");
+        //longest palindrome of length 7, racecar
         Palindrome p7 = new Palindrome("A racecar won. It's a radar");
+        //longest palindrome of length 5, tabat
         Palindrome p8 = new Palindrome("The sun sets, and the sky turns dark. Stars twinkle, " +
                 "and the night is quiet. A bat flies, and an owl hoots. The moon shines, and the world sleeps. " +
                 "It's a calm night, full of peace and serenity. Yet, in the dark, a rat scurries. It's not alone; " +

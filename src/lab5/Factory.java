@@ -2,7 +2,7 @@ package lab5;
 
 /**
  * @author Aleksandra Łabęda,
- *
+ *Aleksandra Wasilewska
  */
 
 //===============================
