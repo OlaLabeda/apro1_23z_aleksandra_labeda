@@ -23,6 +23,14 @@ zwraca false, bo p1 == p2 porównuje referencje, a p1 i p2 mają je różne
 System.out.println("p1.equals(p2) : " + p1.equals(p2));
 Zwraca true, bo zaproponowana w programie implementacja funkcji equals porównuje wartości literowe palindromów, bez brania pod uwage znaków dodatkowych jak np. spacje czy przecinki
 
+
+//dzialalo przed modyfikacja funkcji findLongestPalindrome na metode klasy Palindrome
+//po modyfikacji, wewnatrz konstruktora wywolywana jest this.findLongestPalindrome();
+// ktora od razu przypisuje wartosc zmiennej longestPalindromicSubstring, która mozna wywolwac potem
+//za pomoca odpowiadajacego jej gettera,
+//metoda findLongestPalindrome zostala ustawiona na prywatna i jest wywolywana jedynie wewnatrz konstruktora
+//klasy Palijndrome, zatem poza ta klasa nie ma do niej juz dostepu
+
 String longestPalindrome = findLongestPalindrome(word);
 zwraca: kobyłamamałybok
 
