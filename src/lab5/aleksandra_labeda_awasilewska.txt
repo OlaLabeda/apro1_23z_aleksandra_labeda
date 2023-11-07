@@ -1,0 +1,48 @@
+Sprawozdanie lab5
+Aleksandra Łabęda, Aleksandra Wasilewska
+3.1 =================================================================================================
+
+METODA EQUALS=================================================================
+
+Zwrotna - powinna zwrócić true, jeżeli porównuje obiekt z samym sobą:
+a.equals(a) => true (dla każdych nie-nullowych wartości referencji)
+
+Symetryczna - jeżeli a.equals(b) zwraca true, to b.equals(a) również musi zwrócić true(dla każdych nie-nullowych wartości referencji)
+
+Przechodnia - jeżeli a.equals(b) zwraca true i b.equals(c) zwraca true, to a.equals(c) również musi zwracać true (dla każdych nie-nullowych wartości referencji)
+
+Spójna w czasie - powtarzalne wywołania a.equals(b) powinny konsekwentnie zwracać ten sam wynik (true lub false) (dopóki obiekty nie zostaną w żaden sposób zmodyfikowane) (dla każdych nie-nullowych wartości referencji)
+
+Podusmowując - metoda equals dla każdych nie-nullowych wartości referencyjnych a i b zwraca true wtedy i tylko tedy gdy odnoszą się one do tego samego obiektu
+
+ANALIZA TESTÓW=================================================================
+
+System.out.println("p1 == p2 : " + (p1 == p2));
+zwraca false, bo p1 == p2 porównuje referencje, a p1 i p2 mają je różne
+
+System.out.println("p1.equals(p2) : " + p1.equals(p2));
+Zwraca true, bo zaproponowana w programie implementacja funkcji equals porównuje wartości literowe palindromów, bez brania pod uwage znaków dodatkowych jak np. spacje czy przecinki
+
+String longestPalindrome = findLongestPalindrome(word);
+zwraca: kobyłamamałybok
+
+
+"Hashtable<Palindrome, String> ps = new Hashtable<>();
+ps.put(new Palindrome("a car boso kokos obraca"), "Andrzej Pacierpnik");
+ps.put(p2, "autor nieznany");
+ps.put(new Palindrome("muzo, raz daj jad za rozum"), "Julian Tuwim");
+ps.put(p3, "Tadeusz Morawski");"
+ta część przypisuje autora do danego palindromu
+
+
+
+3.2 =================================================================================================
+
+
+W klasie Palindrome, pole typu licznik jest zdefiniowane jako statyczne pole, co oznacza, że istnieje tylko jedna instancja tego pola w całej klasie, niezależnie od ilości utworzonych obiektów tej klasy. Oznacza to, że pole licznik istnieje tylko w jednym egzemplarzu w całej aplikacji.
+
+Nie ma zależności między liczbą utworzonych obiektów klasy Palindrome a ilością pól licznik. Bez względu na liczbę utworzonych obiektów klasy Palindrome, pole licznik będzie istniało w jednym egzemplarzu dla całej klasy.
+
+
+3.3 =================================================================================================
+funkcja main znajduje się w oddzielnej klasie o nazwie Production
