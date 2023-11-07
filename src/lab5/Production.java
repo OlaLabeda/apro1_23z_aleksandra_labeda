@@ -1,5 +1,7 @@
 package lab5;
-
+/**
+ * @author Aleksandra Łabęda,
+ */
 public class Production {
     public static void main(String[] args) {
         Machine m1 = new Machine(1);
