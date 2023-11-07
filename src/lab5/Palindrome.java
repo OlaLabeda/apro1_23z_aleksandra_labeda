@@ -26,7 +26,9 @@ public class Palindrome {
      * counter of all calls of method isPalindromeCounter
      */
     public static int isPalindromeCounter = 0;
-
+    /**
+     * Palindrme class construtor
+     */
     public Palindrome(String palindrome) {
 
         this.palindrome = palindrome;
@@ -96,9 +98,25 @@ public class Palindrome {
 
         //comparing the text of palindromes
         if (this.getRawPalindrome() == null && otherPalindrome.getRawPalindrome() == null) {
-            return true; // Oba palindromy są nullem, więc uważamy je za równe
-        } else if (this.getRawPalindrome() != null) {
-            return this.getRawPalindrome().equals(otherPalindrome.getRawPalindrome());
+            return true; // both palindromes are null, so they are assumed to have the same value
+        } else if (this.getRawPalindrome() != null) { //rawPalindrome is not null so the equality can be checked
+            String oPalRaw = otherPalindrome.getRawPalindrome();
+            String objRaw = this.getRawPalindrome();
+            //comparing only letters without takng into consideration upper/lower case
+            oPalRaw = oPalRaw.toLowerCase();
+            objRaw = objRaw.toLowerCase();
+            //length of both palindromes is different so they cant be the same
+            if (objRaw.length() != oPalRaw.length()){
+                return false;
+            }
+            else {
+                for (int i = 0; i < objRaw.length(); i++){
+                    if (objRaw.charAt(i) != oPalRaw.charAt(i)){
+                        return false;
+                    }
+                }
+                return true;
+            }
         } else {
             return false; // one of palindromes is null so it's different
         }
@@ -124,6 +142,7 @@ public class Palindrome {
         ps.put(p2, "autor nieznany");
         ps.put(new Palindrome("muzo, raz daj jad za rozum"), "Julian Tuwim");
         ps.put(p3, "Tadeusz Morawski");
+
         System.out.println("Autorem palindromu " + p3 + " jest " + ps.get(p3));
         String word = "rrrrr abccba kobyłamamałybok";
         String longestPalindrome = findLongestPalindrome(word);

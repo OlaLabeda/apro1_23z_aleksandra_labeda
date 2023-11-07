@@ -1,4 +1,8 @@
 package lab5;
+/**
+ * @author Aleksandra Łabęda,
+ *
+ */
 
 public class Machine {
     private int speed;
