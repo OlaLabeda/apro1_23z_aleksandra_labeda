@@ -1,22 +1,30 @@
 package lab5;
+import java.util.Hashtable;
+
 /**
  * @author Aleksandra Łabęda,
  */
 
-import java.util.Hashtable;
-
 public class Palindrome {
     /**
-     * original text of the palindrome
-     * readable for human
+     * original text of the palindrome readable for human
      */
     private String palindrome = null;
+    /**
+     * modified text of the palindrome without characters other than letters
+     */
     private String rawPalindrome = null;
-    // Licznik wywołań metody findLongestPalindrome
+    /**
+     * counter of all calls of method findLongestPalindrome
+     */
     public static int findLongestPalindromeCounter = 0;
-    // Licznik wywołań metody analyzeSubstring
+    /**
+     * counter of all calls of method analyzeSubstringCounter
+     */
     public static int analyzeSubstringCounter = 0;
-    // Licznik wywołań metody isPalindrome
+    /**
+     * counter of all calls of method isPalindromeCounter
+     */
     public static int isPalindromeCounter = 0;
 
     public Palindrome(String palindrome) {
@@ -24,30 +32,24 @@ public class Palindrome {
         this.palindrome = palindrome;
         this.rawPalindrome = makeRawPalindrome(palindrome);
     }
-    /**
-     *  text of the palindrome without spaces and other
-     *  signs that are not letters, for comparing palindromes
-     */
-
 
     /**
      * @return original version of palindrome
      */
     public String getPalindrome() {
-        // Write you code here
         return palindrome;
     }
 
     /**
-     * @return version of palindrome without additional signs
+     * @return version of palindrome made out of letters only
      */
     public String getRawPalindrome() {
-        // Write you code here
         return rawPalindrome;
     }
 
     /**
-     * @return makes version of palindrome without additional signs
+     * @return makes version of palindrome without signs other than letters
+     * to make comparing palindromes easier
      */
     public String makeRawPalindrome(String palindrome) {
         if (palindrome == null) {
@@ -55,51 +57,52 @@ public class Palindrome {
         }
 
         StringBuilder rawPalindromeBuilder = new StringBuilder();
+        //iterating over elements of String modified to be a char array
         for (char ch : palindrome.toCharArray()) {
             if (Character.isLetter(ch)) {
                 rawPalindromeBuilder.append(ch);
             }
         }
-
         return rawPalindromeBuilder.toString();
     }
 
     @Override
     public String toString() {
-
         return palindrome;
     }
 
     @Override
     public boolean equals(Object anObject) {
-        // Sprawdzamy, czy obiekt jest równy samemu sobie
+        //checking if an object is equal to itself
+        //(reference to the same object)
         if (this == anObject) {
             return true;
         }
 
-        // Sprawdzamy, czy obiekt nie jest nullem
-        if (anObject == null) {
+        //checking if object is not null or if anObject is an instance of a Palindrome class
+        if (anObject == null || !(anObject instanceof Palindrome))  {
             return false;
         }
 
-        // Sprawdzamy, czy obiekt anObject jest instancją klasy Palindrome
-        if (!(anObject instanceof Palindrome)) {
-            return false;
-        }
+        //casting the 'anObject' to 'Palindrome' in order to access the 'getRawPalindrome()' method
 
-        // Konwertujemy obiekt anObject na Palindrome
+        /*
+        *When passing a reference to an object as a method argument, in this case as 'Object anObject,'
+        * the 'equals' method doesn't know the exact type of the object. Therefore, to use the methods
+        * and fields of a specific type, you need to cast the object to the appropriate type if there
+        * is certainty that it is the correct type.
+        * */
         Palindrome otherPalindrome = (Palindrome) anObject;
 
-        // Porównujemy tekst palindromów
+        //comparing the text of palindromes
         if (this.getRawPalindrome() == null && otherPalindrome.getRawPalindrome() == null) {
             return true; // Oba palindromy są nullem, więc uważamy je za równe
         } else if (this.getRawPalindrome() != null) {
             return this.getRawPalindrome().equals(otherPalindrome.getRawPalindrome());
         } else {
-            return false; // Jedno z palindromów jest nullem, więc uważamy je za różne
+            return false; // one of palindromes is null so it's different
         }
     }
-
 
     @Override
     public int hashCode() {
@@ -137,16 +140,13 @@ public class Palindrome {
         System.out.println("p2.analyzeSubstringCounter: " + p5.analyzeSubstringCounter);
 
 
-        Palindrome p6 = new Palindrome("jajjaj");
-        Palindrome p7 = new Palindrome("A man, a plan, a canal, Panama");
-        Palindrome p8 = new Palindrome("Evil eras roar, reviled." +
-                "Red roses sit on." +
-                "Newt, Santa at rat, Santa won." +
-                "Now on a known light," +
-                "wings white," +
-                "dip red stars and no." +
-                "Shine down on me." +
-                "Live, Don, evil.");
+        Palindrome p6 = new Palindrome("Ala");
+        Palindrome p7 = new Palindrome("A racecar won. It's a radar");
+        Palindrome p8 = new Palindrome("The sun sets, and the sky turns dark. Stars twinkle, " +
+                "and the night is quiet. A bat flies, and an owl hoots. The moon shines, and the world sleeps. " +
+                "It's a calm night, full of peace and serenity. Yet, in the dark, a rat scurries. It's not alone; " +
+                "a cat is near. The chase begins, a race in the night. Shadows move, and the hunt is on. In the end, " +
+                "it's the cat's victory. A purr, a satisfied cat, and the night resumes its tranquility.");
 
         findLongestPalindrome(p6.getRawPalindrome());
         System.out.println("p6.findLongestPalindromeCounter: " + p6.findLongestPalindromeCounter);
@@ -168,6 +168,7 @@ public class Palindrome {
     public static String findLongestPalindrome(String word) {
         findLongestPalindromeCounter++;
         String current = "";
+        word = word.toLowerCase();
         String longestPalindrome = "";
         if (word == null) return null;
         for (int i = 0; i < word.length(); i++) {
