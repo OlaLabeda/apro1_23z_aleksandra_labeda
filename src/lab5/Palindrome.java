@@ -164,7 +164,9 @@ public class Palindrome {
         System.out.println("p8.isPalindromeCounter: " + p8.isPalindromeCounter);
     }
 
-    //O(n^3) checking all possible substrings
+    /**
+     * @return longest palindromic substring of a given string
+     */
     public static String findLongestPalindrome(String word) {
         findLongestPalindromeCounter++;
         String current = "";
@@ -181,7 +183,10 @@ public class Palindrome {
         return longestPalindrome;
 
     }
-
+    /**
+     * @return analyzing substrings of a substring
+     * to check if there's a palindrome
+     */
     public static String analyzeSubstring(String word) {
         analyzeSubstringCounter++;
         if (word == null) return null;
@@ -198,6 +203,9 @@ public class Palindrome {
         return "";
     }
 
+    /**
+     * @return simply checking if a String is a palindromic sequence
+     */
     public static boolean isPalindrome(String word) {
         isPalindromeCounter++;
         if (word == null) return false;
