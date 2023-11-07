@@ -35,6 +35,9 @@ ps.put(p3, "Tadeusz Morawski");"
 ta część przypisuje autora do danego palindromu
 
 
+gdyby zamienić funkcję findLongestPalindrome na metode klasy Palindrome, kod zaproponowany w skrypcie, nie 
+skompilowalby się, ze wzgledu na roznice miedzy sposobem wykonywania metod i funkcji w javie
+
 
 3.2 =================================================================================================
 
