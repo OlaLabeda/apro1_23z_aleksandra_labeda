@@ -138,7 +138,7 @@ public class Palindrome {
         if (palindrome == null) {
             return 0;
         }
-        return palindrome.hashCode();
+        return rawPalindrome.hashCode();
     }
 
 
