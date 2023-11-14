@@ -1,0 +1,46 @@
+1=> W Javie operator '&' jest operatorem logicznym typu 'AND', podobnie jak '&&'. 
+Różnica między nimi polega na tym, że '&' wykonuje operację logiczną na obu argumentach - obie strony wyrażenia są sprawdzane niezależnie od wyniku pierwszej strony, podczas gdy '&&' używa tzw. "krótkiego obwodu" (short-circuit), co oznacza, że drugi argument nie jest sprawdzany, jeśli pierwszy jest fałszywy.
+
+
+2=> Podobnie jak wcześniej, operator '&' zawsze sprawdza obie strony, niezależnie od wyniku pierwszego argumentu, podczas gdy operator '&&' używa krótkiego obwodu, aby oszczędzić czas, gdy druga strona nie jest potrzebna. Jeśli pierwsza strona jest fałszywa, '&&' nie będzie sprawdzać drugiej strony, ponieważ wynik całego wyrażenia będzie zawsze fałszywy.
+
+3=> Ponownie, operator | zawsze sprawdza obie strony, niezależnie od wyniku pierwszego argumentu. Operator || używa krótkiego obwodu, co oznacza, że jeśli pierwszy argument jest prawdziwy, drugi nie jest sprawdzany, ponieważ wynik całego wyrażenia jest już znany.
+
+4=> Zasada działania taka sama jak wyżej. 
+
+5=> 
+Dla b1 = f1true() & f1true();
+Obydwie funkcje f1true() są wywoływane zawsze, ponieważ operator & nie używa krótkiego obwodu.
+
+Dla b2 = f1true() && f1true();
+Tylko jedna funkcja f1true() jest wywoływana, jeśli pierwsza zwróci false, druga nie będzie sprawdzana
+
+Dla b3 = f1false() & f1false();
+Obydwie funkcje f1false() są wywoływane zawsze, ponieważ operator & nie używa krótkiego obwodu.
+
+Dla b4 = f1false() && f1false();
+Tylko jedna funkcja f1false() jest wywoływana, jeśli pierwsza zwróci true, druga nie będzie sprawdzana.
+
+Dla b5 = f1true() | f1true();
+Obydwie funkcje f1true() są wywoływane zawsze, ponieważ operator | nie używa krótkiego obwodu.
+
+Dla b6 = f1true() || f1true();
+Tylko jedna funkcja f1true() jest wywoływana, jeśli pierwsza zwróci true, druga nie będzie sprawdzana.
+
+Dla b7 = f1false() | f1false();
+Obydwie funkcje f1false() są wywoływane zawsze, ponieważ operator | nie używa krótkiego obwodu.
+
+Dla b8 = f1false() || f1false();
+Tylko jedna funkcja f1false() jest wywoływana, jeśli pierwsza zwróci false, druga nie będzie sprawdzana.
+
+
+6=> Efekt uboczny w kontekście programowania odnosi się do zmiany stanu, wartości, zachowania systemu występującej podczas wykonania frgamentu kodu, ale nie będąca jego bezpośrednim rezultatem. 
+Może on wpływac na inne części programu i utrudniać utrzymanie i zrozumienie kodu. Przykładami mogą być modyfikacje zmiennych globalnych, interakcje z plikami, wysyłanie żądań do zdalnego serwera, wprowadzanie zmian w bazie danych.
+
+7=> Klasa Formatter w Javie jest używana do formatowania tekstu, umożliwiając tworzenie łańcuchów znaków z określonym układem, co jest przydatne na przykład podczas generowania raportów lub formatowania danych do zapisu w plikach tekstowych.
+-umożliwia określenie formatu dla różnych typów danych, takich jak liczby całkowite, liczby zmiennoprzecinkowe, daty itp.
+-umożliwia łączenie różnych wartości w jeden łańcuch znaków z określonym układem, co jest przydatne do generowania tekstu o określonym formacie.
+-można używać Formatter w połączeniu z różnymi klasami obsługującymi strumienie, takimi jak PrintStream lub FileOutputStream, aby łatwo zapisywać sformatowany tekst do plików lub innych strumieni.
+-można dostosować sposób formatowania danych do różnych języków i regionów.
+
+8=> W Javie operacje przesunięcia bitowego są wykonywane modulo długość bitowa typu danych. W przypadku int w Javie, Integer.SIZE to 32 bity. Przesunięcie bitowe o 32 bity jest równoważne przesunięciu o 0 bitów, więc wynik pozostaje bez zmian, stąd wynik 1 << Integer.SIZE jest równe jeden.
