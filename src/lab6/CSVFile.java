@@ -2,7 +2,7 @@ package lab6;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author Aleksandra Łabęda,
@@ -10,12 +10,26 @@ import java.util.List;
  */
 
 public class CSVFile {
+    @Override
+    public String toString() {
+        String sentence = "";
+        for (String[] row : rows) {
+                for (String element : row) {
+                    sentence += element + " ";
+                }
+                sentence += "\n";
+        }
+
+
+        return sentence;
+    }
+
     /**
      * The list of rows read from a file. Each row consists
      * of a table of String values representing the actual
      * value from CSV.
      */
-    private List<String[]> rows = new ArrayList<>();
+    private ArrayList<String[]> rows = new ArrayList<>();
     /**
      * Reads given file as CSV with given separator
      * @param fileName the name of the CSV file to read.
@@ -49,18 +63,28 @@ public class CSVFile {
             e.printStackTrace();
         }
     }
-    @Override
-    public String toString() {
-// Write your code here
-        return null;
-    }
+
     public static void main(String[] args) {
-        CSVFile csvFile = new CSVFile("lab6/dane.csv", ",");
+        Scanner scanner = new Scanner(System.in);
+        String plikWejsciowy;
+        String plikWyjsciowy;
+        String separatorWejscia;
+        String separatorWyjscia;
+        System.out.println("Podaj nazwe pliku wejsciowego: ");
+        plikWejsciowy = scanner.next();
+        System.out.println("Podaj nazwe pliku wyjsciowego: ");
+        plikWyjsciowy = scanner.next();
+        System.out.println("Podaj separator pliku wejsciowego: ");
+        separatorWejscia = scanner.next();
+        System.out.println("Podaj separator pliku wyjsciowego: ");
+        separatorWyjscia = scanner.next();
+
+        CSVFile csvFile = new CSVFile(plikWejsciowy, separatorWejscia);
         System.out.println("Read CSV File:");
-        System.out.println(csvFile);
+        System.out.println(csvFile.toString());
 
         // Zapis do innego pliku z nowym separatorem
-        csvFile.writeCSVFile("output.csv", ";");
+        csvFile.writeCSVFile(plikWyjsciowy, separatorWyjscia);
         System.out.println("Write CSV File with a different separator.");
 
     }

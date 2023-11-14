@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * @author Aleksandra Łabęda,
- * Aleksandra Wasilewska
+ * Bartosz Czerwiński
  */
 
 public class Palindrome implements Serializable {
