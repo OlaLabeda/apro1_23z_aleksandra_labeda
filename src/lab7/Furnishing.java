@@ -12,5 +12,12 @@ public class Furnishing {
         System.out.println("W pokoju stoi " + couch + " i " + table +
                 ". Jest tylko jedno " + chair);
         System.out.println("W innym pokoju znajdują się: " + table2 +
+                " i " + table3);
+        if (table2.equals(table3)) {
+            System.out.println("Te stoły mają tyle samo nóg");
+        } else {
+            System.out.println("Każdy ze stołów ma inną liczbę nóg");
+        }
+
     }
 }
