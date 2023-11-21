@@ -4,29 +4,43 @@ package lab7;
  * Bartosz Czerwiński
  */
 public class Table extends Furniture {
+    /**
+     * number of legs of a table
+     */
     private int legNumber;
+
+    /**
+     *
+     * @param legNumber
+     * @param description
+     * constructor of a class table
+     */
     public Table (int legNumber, String description) {
         super(description);
         this.legNumber = legNumber;
     }
 
-    public String getDescription() {
-      return super.getDesccription();
-    }
-    public void setDescription(String description) {
-        super.setDesccription(description);
-    }
+    /**
+     *
+     * @return
+     * returns number of legs
+     */
     public int getLegNumber() {
         return legNumber;
     }
 
+    /**
+     *
+     * @param legNumber
+     * sets number of legs
+     */
     public void setLegNumber(int legNumber) {
         this.legNumber = legNumber;
     }
 
     @Override
     public String toString() {
-        return "Stol z nastepujaca iloscia nog: " +
+        return "Stol " + super.getDesccription() + " z nastepujaca iloscia nog: " +
                  legNumber;
     }
 }

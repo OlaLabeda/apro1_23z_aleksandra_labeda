@@ -4,17 +4,29 @@ package lab7;
  * Bartosz Czerwiński
  */
 public class Furniture {
-    private String desccription;
-
-    public Furniture(String desccription) {
-        this.desccription = desccription;
+    /**
+     * description of a furniture
+     */
+    private String description = null;
+    /**
+     * @param description
+     * constructor setting description of a furniture
+     */
+    public Furniture(String description) {
+        this.description = description;
     }
-
+    /**
+     * @return
+     * returns description of a furniture
+     */
     public String getDesccription() {
-        return desccription;
+        return description;
     }
 
-    public void setDesccription(String desccription) {
-        this.desccription = desccription;
+    /**
+     * @param description
+     */
+    public void setDesccription(String description) {
+        this.description = description;
     }
 }

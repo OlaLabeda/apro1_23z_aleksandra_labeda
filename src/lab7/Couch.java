@@ -20,24 +20,6 @@ public class Couch extends Furniture{
         super(description);
         this.numberOfPeople = numberOfPeople;
     }
-
-    /**
-     *
-     * @return
-     * returns description of a furniture
-     */
-    public String getDescription() {
-        return super.getDesccription();
-    }
-
-    /**
-     * @param description
-     * allows changing description of a furniture
-     */
-    public void setDescription(String description) {
-        super.setDesccription(description);
-    }
-
     /**
      *
      * @return
@@ -57,7 +39,7 @@ public class Couch extends Furniture{
     }
     @Override
     public String toString() {
-        return "Kanapa " + getDescription() + " dla" + numberOfPeople +
+        return "Kanapa " + super.getDesccription() + " dla" + numberOfPeople +
                 "osob";
     }
 }

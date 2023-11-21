@@ -5,23 +5,18 @@ package lab7;
  * Bartosz Czerwiński
  */
 public class Chair extends Furniture{
+    /**
+     *
+     * @param description
+     * constructor calling super class to get a description for a chair
+     */
 
     public Chair(String description) {
         super(description);
     }
 
     @Override
-    public String getDesccription() {
-        return super.getDesccription();
-    }
-
-    @Override
-    public void setDesccription(String desccription) {
-        super.setDesccription(desccription);
-    }
-
-    @Override
     public String toString() {
-        return "Krzeslo " + getDesccription();
+        return "Krzeslo " + super.getDesccription() + " " + getDesccription();
     }
 }

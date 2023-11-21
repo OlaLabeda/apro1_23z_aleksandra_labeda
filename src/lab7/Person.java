@@ -27,6 +27,7 @@ public class Person {
      * @param lastName
      * @param birthdate
      * @param placeOfBirth
+     * constuctor setting personal data
      *
      */
 
@@ -37,14 +38,29 @@ public class Person {
         this.placeOfBirth = placeOfBirth;
     }
 
+    /**
+     *
+     * @return
+     * returns first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     *
+     * @param firstName
+     * sets first name
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     *
+     * @return
+     * returns
+     */
     public String getLastName() {
         return lastName;
     }
