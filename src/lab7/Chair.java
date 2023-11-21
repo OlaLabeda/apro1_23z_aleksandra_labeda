@@ -17,6 +17,6 @@ public class Chair extends Furniture{
 
     @Override
     public String toString() {
-        return "Krzeslo " + super.getDesccription() + " " + getDesccription();
+        return "Krzeslo " + super.getDesccription();
     }
 }
