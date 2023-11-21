@@ -39,7 +39,7 @@ public class Couch extends Furniture{
     }
     @Override
     public String toString() {
-        return "Kanapa " + super.getDesccription() + " dla" + numberOfPeople +
-                "osob";
+        return "Kanapa " + super.getDesccription() + " dla " + numberOfPeople +
+                " osob";
     }
 }
