@@ -1,5 +1,9 @@
 package lab7;
 
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Chair extends Furniture{
 
     public Chair(String description) {

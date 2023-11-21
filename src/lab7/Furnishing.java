@@ -1,5 +1,8 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Furnishing {
     public static void main(String... args) {
         Furniture chair = new Chair("z oparciem"),

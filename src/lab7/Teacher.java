@@ -1,19 +1,22 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Teacher extends Person{
     private String academicDegree;
     private String subject;
     private String faculty;
-    private int experience;
+    private int room;
 
     public Teacher(String firstName, String lastName, String academicDegree,
                    Birthdate birthdate, String placeOfBirth, String subject,
-                   String faculty, int experience) {
+                   String faculty, int room) {
         super(firstName, lastName, birthdate, placeOfBirth);
         this.academicDegree = academicDegree;
         this.subject = subject;
         this.faculty = faculty;
-        this.experience = experience;
+        this.room = room;
     }
 
     public String getAcademicDegree() {
@@ -28,12 +31,12 @@ public class Teacher extends Person{
         return subject;
     }
 
-    public int getExperience() {
-        return experience;
+    public int getRoom() {
+        return room;
     }
 
-    public void setExperience(int experience) {
-        this.experience = experience;
+    public void setRoom(int room) {
+        this.room = room;
     }
 
     public void setSubject(String subject) {

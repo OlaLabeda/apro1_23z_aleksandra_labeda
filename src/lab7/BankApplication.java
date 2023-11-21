@@ -1,5 +1,8 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class BankApplication {
     public static void main(String[] args) {
         PersonalData personalData1 = new PersonalData("Felipe", "Bran", "94478512452");
@@ -15,6 +18,7 @@ public class BankApplication {
         System.out.println(customer2.getBalance("ACC3"));
         customer2.withdraw("ACC3", 17.45);
         System.out.println(customer2.getBalance("ACC3"));
+
     }
 }
 

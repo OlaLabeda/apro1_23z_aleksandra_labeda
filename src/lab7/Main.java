@@ -1,5 +1,8 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Main {
     public static void main(String [] args) {
         Person teacher = new Teacher("Pawel", "Bak", "PhD",

@@ -1,5 +1,8 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Student extends Person {
 
     private String major;

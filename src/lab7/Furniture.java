@@ -1,5 +1,8 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Furniture {
     private String desccription;
 

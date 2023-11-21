@@ -1,10 +1,34 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Person {
+    /**
+     * person's first name
+     */
     private String firstName;
+    /**
+     * person's last name
+     */
     private String lastName;
+    /**
+     * persons's birthdate
+     */
     private Birthdate birthdate;
+    /**
+     * persons's place of birth
+     */
     private String placeOfBirth;
+
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param birthdate
+     * @param placeOfBirth
+     *
+     */
 
     public Person(String firstName, String lastName, Birthdate birthdate, String placeOfBirth) {
         this.firstName = firstName;

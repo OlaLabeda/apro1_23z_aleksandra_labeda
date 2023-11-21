@@ -1,5 +1,8 @@
 package lab7;
-
+/**
+ * @author Aleksandra Łabęda,
+ * Bartosz Czerwiński
+ */
 public class Table extends Furniture {
     private int legNumber;
     public Table (int legNumber, String description) {
