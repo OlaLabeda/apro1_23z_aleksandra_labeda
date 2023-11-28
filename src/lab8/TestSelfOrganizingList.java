@@ -7,8 +7,6 @@ package lab8;
 public class TestSelfOrganizingList {
     /**
      * Main method containing tests for the SelfOrganizingList class.
-     *
-     * @param args Command-line arguments (not used).
      */
     public static void main(String[] args) {
         SelfOrganizingList selfOrganizingList = new SelfOrganizingList();
