@@ -9,29 +9,15 @@ package lab8;
  * In this class, each node stores information about the number of accesses (accessCount).
  * The getNode method moves the node to the beginning of the list according to the number of accesses on each access.
  */
-public class SelfOrganizingList {
-    private Node root;
-    private int size;
+public class SelfOrganizingList extends CustomList{
 
     /**
      * Constructor creating an empty self-organizing list.
      */
     public SelfOrganizingList() {
-        root = null;
-        size = 0;
+        super();
     }
 
-    /**
-     * Adds a new node with a specified value to the beginning of the list.
-     *
-     * @param value The value of the added node.
-     */
-    public void add(int value) {
-        Node newNode = new Node(value);
-        newNode.setNext(root);
-        root = newNode;
-        size++;
-    }
 
     /**
      * Finds the node with a specified value and moves it to the beginning of the list according to the number of accesses.
@@ -55,10 +41,8 @@ public class SelfOrganizingList {
                     current.setNext(root);
                     root = current;
                 }
-
                 return current;
             }
-
             previous = current;
             current = current.getNext();
         }
@@ -66,29 +50,7 @@ public class SelfOrganizingList {
         return null;
     }
 
-    /**
-     * Returns the root of the list.
-     *
-     * @return The root of the list.
-     */
-    public Node getRoot() {
-        return root;
-    }
 
-    /**
-     * Returns the number of elements in the list.
-     *
-     * @return The number of elements in the list.
-     */
-    public int length() {
-        return size;
-    }
-
-    /**
-     * Text representation of the list as a string.
-     *
-     * @return Text representation of the list.
-     */
     public String toString() {
         StringBuilder s = new StringBuilder();
         Node node = root;

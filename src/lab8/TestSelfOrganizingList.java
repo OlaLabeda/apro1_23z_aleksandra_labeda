@@ -12,7 +12,6 @@ public class TestSelfOrganizingList {
         SelfOrganizingList selfOrganizingList = new SelfOrganizingList();
         selfOrganizingList.add(5);
         selfOrganizingList.add(7);
-        selfOrganizingList.add(9);
         selfOrganizingList.add(5);
         selfOrganizingList.add(1);
         selfOrganizingList.add(3);
@@ -29,6 +28,7 @@ public class TestSelfOrganizingList {
         System.out.println("Accessed node: " + accessedNode);
         System.out.println("List after access: " + selfOrganizingList);
 
+
         Node newNode = new Node(10);
         selfOrganizingList.add(10);
         System.out.println("Added new node with value 10: " + newNode);
@@ -36,6 +36,14 @@ public class TestSelfOrganizingList {
 
         Node nonExistingNode = selfOrganizingList.getNode(99);
         System.out.println("Accessing non-existing node: " + nonExistingNode);
+        System.out.println("List after access: " + selfOrganizingList);
+
+        Node accessedNode1 = selfOrganizingList.getNode(9);
+        System.out.println("Accessed node: " + accessedNode1);
+        System.out.println("List after access: " + selfOrganizingList);
+
+        selfOrganizingList.getNode(9);
+        System.out.println("Accessed node: " + 9);
         System.out.println("List after access: " + selfOrganizingList);
     }
 }
