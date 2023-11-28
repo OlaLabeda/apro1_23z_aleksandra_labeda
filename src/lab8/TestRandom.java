@@ -30,6 +30,8 @@ public class TestRandom {
         System.out.println();
         counter();
 
+        System.out.println();
+        arrayListCounter();
     }
 
     /**
@@ -50,5 +52,24 @@ public class TestRandom {
         }
         System.out.println("max= " + max + " max/2= " + halfMax);
         System.out.println("lowCounter= " + lowCounter + " highCounter= " + highCounter);
+    }
+
+    public static void arrayListCounter() {
+        int max = 2 * (Integer.MAX_VALUE / 3);
+        int[] tableOfRandoms = new int[1_000_000];
+        for (int i = 0; i < tableOfRandoms.length; i++) {
+            tableOfRandoms[i] = generateBoundedRandomInt(max);
+        }
+        int lowCounter = 0, highCounter = 0, halfMax = max >> 1;
+        for (int a : tableOfRandoms) {
+            if (a < halfMax) {
+                lowCounter++;
+            } else {
+                highCounter++;
+            }
+        }
+        System.out.println("max= " + max + " max/2= " + halfMax);
+        System.out.println("lowCounter= " + lowCounter + " highCounter= " + highCounter);
+
     }
 }
