@@ -1,5 +1,6 @@
 package lab8;
 import java.util.Random;
+import java.util.ArrayList;
 
 /**
  * @author Aleksandra Łabęda
@@ -53,15 +54,15 @@ public class TestRandom {
         System.out.println("max= " + max + " max/2= " + halfMax);
         System.out.println("lowCounter= " + lowCounter + " highCounter= " + highCounter);
     }
-
     public static void arrayListCounter() {
         int max = 2 * (Integer.MAX_VALUE / 3);
-        int[] tableOfRandoms = new int[1_000_000];
-        for (int i = 0; i < tableOfRandoms.length; i++) {
-            tableOfRandoms[i] = generateBoundedRandomInt(max);
+        ArrayList<Integer> arra = new ArrayList<Integer>(1_000_000);
+        for (int i = 0; i < 1_000_000; i++) {
+            int g = generateBoundedRandomInt(max);
+            arra.add(g);
         }
         int lowCounter = 0, highCounter = 0, halfMax = max >> 1;
-        for (int a : tableOfRandoms) {
+        for (int a : arra) {
             if (a < halfMax) {
                 lowCounter++;
             } else {
@@ -70,6 +71,6 @@ public class TestRandom {
         }
         System.out.println("max= " + max + " max/2= " + halfMax);
         System.out.println("lowCounter= " + lowCounter + " highCounter= " + highCounter);
-
     }
+
 }
