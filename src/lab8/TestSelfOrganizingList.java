@@ -6,7 +6,7 @@ package lab8;
 
 public class TestSelfOrganizingList {
     /**
-     * Main method containing tests for the SelfOrganizingList class.
+     * Main method containing tests for the SelfOrganizingList class
      */
     public static void main(String[] args) {
         SelfOrganizingList selfOrganizingList = new SelfOrganizingList();
