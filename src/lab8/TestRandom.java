@@ -1,6 +1,10 @@
 package lab8;
 import java.util.Random;
 
+/**
+ * @author Aleksandra Łabęda
+ * Adrian Lis
+ */
 public class TestRandom {
     static Random randomGenerator = new Random();
     static int generateBoundedRandomInt(int bound) {

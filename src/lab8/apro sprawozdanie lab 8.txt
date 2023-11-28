@@ -1,18 +1,42 @@
+**Sprawozdanie LAB8 Aleksandra Łabęda, Adrian Lis**
+
 (⇒1) Przewidywanie wartości lowCounter i highCounter:
-Na podstawie analizy kodu można przewidzieć, że wartości lowCounter będą odpowiadały liczbie wygenerowanych liczb pseudolosowych poniżej połowy zakresu, a highCounter - liczbie liczb powyżej połowy zakresu. Ostateczne wartości zależą od rozkładu generowanych liczb pseudolosowych.
+Na podstawie analizy kodu można przewidzieć, że wartości lowCounter będą odpowiadały liczbie wygenerowanych liczb
+pseudolosowych poniżej połowy zakresu, a highCounter - liczbie liczb powyżej połowy zakresu. Ostateczne wartości zależą
+od rozkładu generowanych liczb pseudolosowych.
 
 (⇒2) Konieczność użycia tablicy:
-W tym konkretnym programie tablica jest używana do przechowywania miliona liczb pseudolosowych. Jeżeli celem jest jedynie zliczanie ilości liczb poniżej i powyżej połowy zakresu, to teoretycznie można to robić na bieżąco bez użycia tablicy. Jednak, aby to osiągnąć, konieczne byłoby modyfikowanie kodu, aby unikać przechowywania wszystkich liczb w tablicy.
+W tym konkretnym programie tablica jest używana do przechowywania miliona liczb pseudolosowych. Jeżeli celem jest
+jedynie zliczanie ilości liczb poniżej i powyżej połowy zakresu, to teoretycznie można to robić na bieżąco bez użycia
+tablicy.
+Można również użyć ArrayListy zamiast klasycznej tablicy
 
 (⇒3) Uruchomienie programu kilka razy:
-Wartości lowCounter i highCounter będą różne przy każdym uruchomieniu programu, ponieważ liczby pseudolosowe są generowane na podstawie aktualnego stanu generatora liczb pseudolosowych. Wartości będą zależały od konkretnego rozkładu generowanych liczb w danym przebiegu programu.
+Wartości lowCounter i highCounter będą różne przy każdym uruchomieniu programu, ponieważ liczby pseudolosowe są
+generowane na podstawie aktualnego stanu generatora liczb pseudolosowych. Wartości będą zależały od konkretnego
+rozkładu generowanych liczb w danym przebiegu programu.
 
-Biblioteka do uzyskiwania liczb pseudolosowych w Javie - java.util.Random. Jej użycie jest zalecane w programach w Javie do tego celu. Klasa ta bierze pod uwagę kwestie związane z wątkami, co oznacza, że jest zaprojektowana tak, aby była bezpieczna do użycia w środowiskach wielowątkowych(Środowisko wielowątkowe (multithreaded environment) odnosi się do sytuacji, w której program działa równocześnie wieloma wątkami. Wątki to mniejsze jednostki wykonawcze w ramach jednego procesu, a środowisko wielowątkowe oznacza, że te wątki mogą wykonywać się jednocześnie, dzieląc zasoby i przetwarzając zadania niezależnie od siebie). Obejmuje ona mechanizmy synchronizacji, które chronią przed równoczesnym dostępem wielu wątków do generatora liczb pseudolosowych, co może wpłynąć na jakość generowanych liczb.
+Biblioteka do uzyskiwania liczb pseudolosowych w Javie - java.util.Random. Jej użycie jest zalecane w programach
+w Javie do tego celu. Klasa ta bierze pod uwagę kwestie związane z wątkami, co oznacza, że jest zaprojektowana tak,
+aby była bezpieczna do użycia w środowiskach wielowątkowych(Środowisko wielowątkowe (multithreaded environment) odnosi
+się do sytuacji, w której program działa równocześnie wieloma wątkami. Wątki to mniejsze jednostki wykonawcze w ramach
+jednego procesu, a środowisko wielowątkowe oznacza, że te wątki mogą wykonywać się jednocześnie, dzieląc zasoby
+i przetwarzając zadania niezależnie od siebie). Obejmuje ona mechanizmy synchronizacji, które chronią przed równoczesnym
+dostępem wielu wątków do generatora liczb pseudolosowych, co może wpłynąć na jakość generowanych liczb.
 
-(⇒4)Przykładem aplikacji, w której pogorszenie czasu wstawiania jest akceptowalne w celu polepszenia czasu wyszukiwania, może być system kontroli wersji. Systemy kontroli wersji, takie jak Git, skupiają się głównie na efektywnym śledzeniu zmian w kodzie źródłowym i umożliwiają programistom współpracę nad projektem.
+(⇒4)Przykładem aplikacji, w której pogorszenie czasu wstawiania jest akceptowalne w celu polepszenia czasu wyszukiwania,
+może być system kontroli wersji. Systemy kontroli wersji, takie jak Git, skupiają się głównie na efektywnym śledzeniu
+zmian w kodzie źródłowym i umożliwiają programistom współpracę nad projektem.
 
-W takim systemie, operacje wstawiania (commit) występują znacznie rzadziej niż operacje wyszukiwania (checkout, diff, log). Wartościowe jest, aby programiści mieli szybki dostęp do najnowszych i najczęściej używanych wersji kodu źródłowego, ponieważ często przeglądają historię zmian, porównują różnice między wersjami, czy też wracają do poprzednich stanów projektu.
+W takim systemie, operacje wstawiania (commit) występują znacznie rzadziej niż operacje wyszukiwania
+(checkout, diff, log). Wartościowe jest, aby programiści mieli szybki dostęp do najnowszych i najczęściej używanych
+wersji kodu źródłowego, ponieważ często przeglądają historię zmian, porównują różnice między wersjami, czy też wracają
+do poprzednich stanów projektu.
 
-Zastosowanie samoorganizującej się listy w tym kontekście może polegać na organizowaniu plików źródłowych według częstości dostępu lub ostatnich modyfikacji. Chociaż dodawanie nowych zmian do historii (commit) może być trochę wolniejsze z powodu dodatkowych operacji przenoszenia węzłów w listach, korzyści z szybkiego dostępu do najważniejszych wersji kodu mogą znacząco przewyższyć koszty czasowe związane z wstawianiem.
+Zastosowanie samoorganizującej się listy w tym kontekście może polegać na organizowaniu plików źródłowych według
+częstości dostępu lub ostatnich modyfikacji. Chociaż dodawanie nowych zmian do historii (commit) może być trochę
+wolniejsze z powodu dodatkowych operacji przenoszenia węzłów w listach, korzyści z szybkiego dostępu do najważniejszych
+wersji kodu mogą znacząco przewyższyć koszty czasowe związane z wstawianiem.
 
-W ten sposób, kosztem pewnego opóźnienia przy wstawianiu nowych wersji kodu, programiści zyskują na efektywności podczas przeszukiwania historii projektu, co jest częstym scenariuszem w procesie rozwoju oprogramowania.
+W ten sposób, kosztem pewnego opóźnienia przy wstawianiu nowych wersji kodu, programiści zyskują na efektywności
+podczas przeszukiwania historii projektu, co jest częstym scenariuszem w procesie rozwoju oprogramowania.

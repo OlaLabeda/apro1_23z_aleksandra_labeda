@@ -1,4 +1,8 @@
 package lab8;
+/**
+ * @author Aleksandra Łabęda
+ * Adrian Lis
+ */
 
 /**
  * Class implementing a self-organizing list that optimizes the search time of nodes.

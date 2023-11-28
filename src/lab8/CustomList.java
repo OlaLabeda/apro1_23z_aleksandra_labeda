@@ -1,4 +1,8 @@
 package lab8;
+/**
+ * @author Aleksandra Łabęda
+ * Adrian Lis
+ */
 
 public class CustomList {
     private Node root;

@@ -1,7 +1,10 @@
 package lab8;
 
 import java.util.Objects;
-
+/**
+ * @author Aleksandra Łabęda
+ * Adrian Lis
+ */
 class Node {
     /**
      * Data for the node. It's final!
