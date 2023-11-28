@@ -5,8 +5,8 @@ package lab8;
  */
 
 public class CustomList {
-    private Node root;
-    private int size;
+    protected Node root;
+    protected int size;
 
     public CustomList() {
         root = null;
