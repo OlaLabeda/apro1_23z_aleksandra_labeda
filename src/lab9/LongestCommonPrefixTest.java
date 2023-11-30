@@ -1,5 +1,8 @@
 package lab9;
 
+/**
+ * @author Aleksandra Łabęda
+ */
 public class LongestCommonPrefixTest {
     public static void main(String[] args) {
         String[] arr1 = {"jajo", "JAJecznica", "jablecznik"};

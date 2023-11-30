@@ -3,7 +3,6 @@ package lab9;
 /**
  * @author Aleksandra Łabęda
  */
-
 /**
  * A function returns longest common prefix between Strings from a given list
  */
