@@ -1,5 +1,5 @@
 package lab9;
-
+import java.util.Arrays;
 /**
  * @author Aleksandra Łabęda
  */
@@ -7,26 +7,29 @@ package lab9;
  * A function returns longest common prefix between Strings from a given list
  */
 public class LongestCommonPrefix {
-    public static String longestCommonPrefix(String [] arr) {
+    public static String longestCommonPrefix(String[] arr) {
         //check if array is not empty
-        if (arr.length == 0)
+        int size = arr.length;
+        if (size == 0)
             return "";
-        //set suspected prefix to be the first value from given array
-        String prefix = arr[0].toLowerCase();
-
-        //iterate over the rest of the array
-        for (int i = 1; i < arr.length; i++) {
-            //for each value from an array check if a suspected prefix is
-            //a prefix of a particular String
-            while (arr[i].toLowerCase().indexOf(prefix) != 0) {
-                //if is not a prefix, keep changing the length of the
-                //prefix until it is equal to the one in the array
-                prefix = prefix.substring(0, prefix.length()-1);
-            }
-        //the longest common prefix of all strings is for sure not longer
-        // than the prefix of any two given strings
+        if (size == 1)
+            return arr[0];
+        //sort array of strings
+        Arrays.sort(arr);
+        //find shorter one between the first and the last string from sorted array
+        //if they have the same prefix the shorter one is going to be the prefix
+        int min = Math.min(arr[0].length(), arr[size-1].length());
+        //find longest prefix between first and last string cuz they are sorted
+        //and if there's a common prefix between the first one and the last one
+        //that means that is common between all other strings in a sorted array
+        arr[0] = arr[0].toLowerCase();
+        arr[size - 1] = arr[size - 1].toLowerCase();
+        int iterate = 0;
+        while (iterate < min && arr[0].charAt(iterate) == arr[arr.length-1].charAt(iterate)) {
+            iterate++;
         }
-
+        if (iterate == 0) return "";
+        String prefix = arr[0].substring(0, iterate-1);
         return prefix;
     }
 }
