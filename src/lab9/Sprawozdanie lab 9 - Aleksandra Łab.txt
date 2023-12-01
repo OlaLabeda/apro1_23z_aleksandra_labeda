@@ -35,3 +35,14 @@ O(26) => O(1) ponieważ ilość liter w alfabecie jest stała.
 Pozostałe zmienne są stałe i niezależne od rozmiaru danych wejściowych.
 Ostateczna złożoność pamięciowa to:
 O(1).
+
+
+Zadanie 3.
+Złożoność czasowa:
+O(c), gdzie c jest liczbą kolumn, algorytm iteruje się po każdej kolumnnie
+raz, wykonując operacje w stałym czasie dla każdej kolumny
+
+Złożoność pamięciowa:
+O(c), gdzie c to liczba kolumn - pamięć potzrzebna
+jest proporcjonalna do liczby kolumn, poza tym złożoność jest stała
+ ze względu na określony rozmiar matrixa (2*c, bo dwa wiersze)
