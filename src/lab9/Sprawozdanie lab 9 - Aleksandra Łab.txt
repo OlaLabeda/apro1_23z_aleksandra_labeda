@@ -1,0 +1,13 @@
+Sprawozdanie lab 9 - Aleksandra Łabęda
+
+Zadanie 1. złożoność pamięciowa i obliczeniowa
+1. Sortowanie stringów przy uzyciu Arrays.sort(arr) 
+zakłądając że N to ilość stringów w tablicy a S to suma długości wszystkich stringów, złożoność czasowa tego sortowania to O(SlogN)
+2. Iteracja przez znaki pierwszego i ostatniego stringa po przesortowaniu tablicy ma złożoność O(min(M, N)), dla M będącego długością krótszego stringa i N będącego długością dłuższego
+Ostatecznie O(SlogN + min(M, N))
+Można przyjąć O(MAX*N*logN) gdzie N to ilosc stringów w tablicy a MAX to maksymalna liczba znaków w każdym stringu
+
+Złożoność pamięciowa
+1. sortowanie zwykle jedynie stałej ilości dodatkowej pamięci, zatem jego złożoność pamięciowa wynosi O(1)
+2. Inne zmienne takie jak size, min, iterate czy prefix... zajmują również stałą ilość pamięci niezależnie od rozmiaru danych wejściowych, zatem złożoność pamięciowa tych zmiennych wynosci O(1)
+Ostateczna złożoność pamięciowa algorytmu wynosi zatem O(1)

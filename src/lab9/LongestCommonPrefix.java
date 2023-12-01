@@ -22,14 +22,14 @@ public class LongestCommonPrefix {
         //find longest prefix between first and last string cuz they are sorted
         //and if there's a common prefix between the first one and the last one
         //that means that is common between all other strings in a sorted array
-        arr[0] = arr[0].toLowerCase();
-        arr[size - 1] = arr[size - 1].toLowerCase();
+        String s1 = arr[0].toLowerCase();
+        String s2 = arr[size - 1].toLowerCase();
         int iterate = 0;
-        while (iterate < min && arr[0].charAt(iterate) == arr[arr.length-1].charAt(iterate)) {
+        while (iterate < min && s1.charAt(iterate) == s2.charAt(iterate)) {
             iterate++;
         }
         if (iterate == 0) return "";
-        String prefix = arr[0].substring(0, iterate-1);
+        String prefix = s1.substring(0, iterate-1);
         return prefix;
     }
 }
