@@ -1,6 +1,14 @@
 package lab9;
 
+/**
+ * @author Aleksandra Łabęda
+ */
 public class EvenOddComparisionTest {
+    /**
+     *
+     * @param args
+     * main function to test programmed solution
+     */
     public static void main(String[] args) {
         String a = "abcd";
         String b = "cbad";

@@ -2,7 +2,19 @@ package lab9;
 
 import java.util.Locale;
 
+/**
+ * @author Aleksandra Łabęda
+ */
+
 public class EvenOddComparision {
+    /**
+     *
+     * @param s1
+     * @param s2
+     * @return
+     * function checking if after switching the order of letters on even indexes and
+     * doing the same on odd indexes can give the same two strings
+     */
     public static boolean evenOddComparision(String s1, String s2) {
         //if the length is different they'll not be the same no matter what
         if (s1.length() != s2.length())
