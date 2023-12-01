@@ -2,12 +2,36 @@ Sprawozdanie lab 9 - Aleksandra Łabęda
 
 Zadanie 1. złożoność pamięciowa i obliczeniowa
 1. Sortowanie stringów przy uzyciu Arrays.sort(arr) 
-zakłądając że N to ilość stringów w tablicy a S to suma długości wszystkich stringów, złożoność czasowa tego sortowania to O(SlogN)
-2. Iteracja przez znaki pierwszego i ostatniego stringa po przesortowaniu tablicy ma złożoność O(min(M, N)), dla M będącego długością krótszego stringa i N będącego długością dłuższego
+zakłądając że N to ilość stringów w tablicy a S to suma długości wszystkich stringów,
+złożoność czasowa tego sortowania to O(SlogN)
+2. Iteracja przez znaki pierwszego i ostatniego stringa po przesortowaniu tablicy ma
+złożoność O(min(M, N)), dla M będącego długością krótszego stringa i N będącego
+długością dłuższego
 Ostatecznie O(SlogN + min(M, N))
-Można przyjąć O(MAX*N*logN) gdzie N to ilosc stringów w tablicy a MAX to maksymalna liczba znaków w każdym stringu
+Można przyjąć O(MAX*N*logN) gdzie N to ilosc stringów w tablicy a MAX to maksymalna
+ liczba znaków w każdym stringu
 
 Złożoność pamięciowa
-1. sortowanie zwykle jedynie stałej ilości dodatkowej pamięci, zatem jego złożoność pamięciowa wynosi O(1)
-2. Inne zmienne takie jak size, min, iterate czy prefix... zajmują również stałą ilość pamięci niezależnie od rozmiaru danych wejściowych, zatem złożoność pamięciowa tych zmiennych wynosci O(1)
+1. sortowanie zwykle jedynie stałej ilości dodatkowej pamięci, zatem jego złożoność
+ pamięciowa wynosi O(1)
+2. Inne zmienne takie jak size, min, iterate czy prefix... zajmują również stałą
+ilość pamięci niezależnie od rozmiaru danych wejściowych, zatem złożoność pamięciowa
+tych zmiennych wynosci O(1)
 Ostateczna złożoność pamięciowa algorytmu wynosi zatem O(1)
+
+
+Zadanie 2.
+Złożoność obliczeniowa:
+1. Iteracja przez łańcuchy:
+O(n), gdzie n to długość łańcuchów s1 i s2.
+2. Porównanie tablic occurrences:
+O(1), ponieważ ilość liter w alfabecie jest stała.
+Ostateczna złożoność obliczeniowa to
+O(n)
+
+Złożoność pamięciowa:
+Tablica occurrences:
+O(26) => O(1) ponieważ ilość liter w alfabecie jest stała.
+Pozostałe zmienne są stałe i niezależne od rozmiaru danych wejściowych.
+Ostateczna złożoność pamięciowa to:
+O(1).
