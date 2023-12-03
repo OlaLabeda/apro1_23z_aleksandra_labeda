@@ -1,0 +1,35 @@
+package lab9;
+
+import java.util.ArrayList;
+
+/**
+ * @author Aleksandra Łabęda
+ */
+public class MapTest {
+    /**
+     *
+     * @param args
+     * a main function calling written functions, printing number of islands
+     * read from input and their sizes
+     */
+    public static void main(String[] args) {
+        Map map1 = MapReader.readMapFromFile("src\\simple_input.txt");
+        ArrayList<Island> islands1 =  MapReader.findIslands(map1);
+
+        System.out.println("Ilosc wysp: " + islands1.size());
+        islands1.size();
+        for (int i = 0; i < islands1.size(); i++) {
+            System.out.println(islands1.get(i).getSize());
+        }
+
+        Map map2 = MapReader.readMapFromFile("src\\large_input.txt");
+
+        ArrayList<Island> islands2 = MapReader.findIslands(map2);
+
+        System.out.println("Ilosc wysp: " + islands2.size());
+        islands2.size();
+        for (int i = 0; i < islands2.size(); i++) {
+            System.out.println(islands2.get(i).getSize());
+        }
+    }
+}
