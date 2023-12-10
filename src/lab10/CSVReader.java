@@ -25,7 +25,6 @@ public class CSVReader {
         }
         return rows;
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
