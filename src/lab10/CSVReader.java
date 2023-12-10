@@ -16,17 +16,16 @@ public class CSVReader {
         this.separator = separator;
     }
 
-    public List<String[]> read() {
+    public List<String[]> read() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
                 rows.add(line.split(separator));
             }
-            return rows;
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+            // Nie trzeba już ręcznie zamykać BufferedReader bo korzystam z
+            // bloku try with resources
         }
-        return null;
+        return rows;
     }
     @Override
     public String toString() {
@@ -40,8 +39,11 @@ public class CSVReader {
 
     public static void main(String[] args) {
         CSVReader csvReader = new CSVReader("oscar_age_male.csv", ",");
-        System.out.println(csvReader.read());
-        System.out.println(csvReader);
-
+        try {
+            System.out.println(csvReader.read());
+            System.out.println(csvReader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
