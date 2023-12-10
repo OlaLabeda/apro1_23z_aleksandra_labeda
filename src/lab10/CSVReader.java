@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * @author Aleksandra Łabęda
  */
+
 /**
  * CSVReader class allows reading data from CSV file
  */
@@ -19,7 +20,8 @@ public class CSVReader {
 
     /**
      * CSV Reader constructor class
-     * @param fileName name of file to be read
+     *
+     * @param fileName  name of file to be read
      * @param separator separator used to separate columns in a csv file
      */
     public CSVReader(String fileName, String separator) {
@@ -29,6 +31,7 @@ public class CSVReader {
 
     /**
      * read method reads data from csv file and returns it as a list of String arrays
+     *
      * @return
      */
     public List<String[]> read() throws IOException, NoColumnCaptionException, InconsistentColumnNumberException, InvalidCSVFileException {
@@ -84,6 +87,7 @@ public class CSVReader {
     /**
      * main method creates csvreader object, reads data form file
      * and prints it on the screen
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -91,7 +95,8 @@ public class CSVReader {
             CSVReader csvReader = new CSVReader("src\\empty.csv", ",");
             List<String[]> result = csvReader.read();
             System.out.println(csvReader.read());
-        } catch (IOException | NoColumnCaptionException | InconsistentColumnNumberException | InvalidCSVFileException e) {
+        } catch (IOException | NoColumnCaptionException | InconsistentColumnNumberException |
+                 InvalidCSVFileException e) {
             e.printStackTrace(); // lub inna forma obsługi błędu
         }
     }
@@ -105,6 +110,7 @@ class NoColumnCaptionException extends Exception {
         super(message);
     }
 }
+
 /**
  * represents situation when number of columns in a row is not compatible with expected value
  */

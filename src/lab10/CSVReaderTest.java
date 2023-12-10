@@ -1,4 +1,5 @@
 package lab10;
+
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -30,7 +31,8 @@ class CSVReaderTest {
 
             assertNotNull(result);
             assertTrue(result.isEmpty());
-        } catch (IOException | NoColumnCaptionException | InconsistentColumnNumberException | InvalidCSVFileException e) {
+        } catch (IOException | NoColumnCaptionException | InconsistentColumnNumberException |
+                 InvalidCSVFileException e) {
             e.printStackTrace(); // Handle or log the exception as needed
         }
     }
