@@ -31,55 +31,46 @@ public class CSVReader {
      * read method reads data from csv file and returns it as a list of String arrays
      * @return
      */
-    public List<String[]> read() {
+    public List<String[]> read() throws IOException, NoColumnCaptionException, InconsistentColumnNumberException, InvalidCSVFileException {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            // checking if a file has .csv extention
+            // checking if a file has .csv extension
             if (!fileName.toLowerCase().endsWith(".csv")) {
                 throw new InvalidCSVFileException("File is not a valid CSV file");
             }
 
-            //read first line which should contain column names
+            // read first line which should contain column names
             String firstLine = br.readLine();
             if (firstLine == null) {
                 throw new NoColumnCaptionException("Empty file");
             }
-            //first  line divided into column names using separator
+            // first line divided into column names using separator
             String[] columnNames = firstLine.split(separator);
             if (columnNames.length == 0) {
                 throw new NoColumnCaptionException("No column names in the first row");
             }
 
             int expectedColumnCount = columnNames.length;
-            //checking if each column is not empty
+            // checking if each column is not empty
             for (String columnName : columnNames) {
                 if (columnName.isEmpty()) {
                     throw new NoColumnCaptionException("Empty column name in the first row");
                 }
             }
-            //reading vrows from files and dividing them using separator
+            // reading rows from files and dividing them using separator
             String line;
-            while ((line  = br.readLine()) != null) {
+            while ((line = br.readLine()) != null) {
                 String[] rowData = line.split(separator);
 
                 if (rowData.length != expectedColumnCount) {
                     throw new InconsistentColumnNumberException("Inconsistent number of columns in a row");
                 }
-                //appends a result array
+                // appends a result array
                 rows.add(rowData);
             }
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
         }
-        catch (NoColumnCaptionException ncce) {
-            ncce.printStackTrace();
-        } catch (InconsistentColumnNumberException icne) {
-            icne.printStackTrace();
-        } catch (InvalidCSVFileException icsvfe) {
-            icsvfe.printStackTrace();
-        }
-
         return rows;
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -96,10 +87,13 @@ public class CSVReader {
      * @param args
      */
     public static void main(String[] args) {
-        CSVReader csvReader = new CSVReader("src\\username.csv", ";");
-        System.out.println(csvReader.read());
-        System.out.println(csvReader);
-
+        try {
+            CSVReader csvReader = new CSVReader("src\\empty.csv", ",");
+            List<String[]> result = csvReader.read();
+            System.out.println(csvReader.read());
+        } catch (IOException | NoColumnCaptionException | InconsistentColumnNumberException | InvalidCSVFileException e) {
+            e.printStackTrace(); // lub inna forma obsługi błędu
+        }
     }
 }
 
