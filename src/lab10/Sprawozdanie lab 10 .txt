@@ -1,0 +1,64 @@
+Sprawozdanie lab 10 
+Aleksandra Łabęda
+
+
+
+(⇒1) Które bloki instrukcji try (w metodzie read) i w jakiej kolejności zostaną
+wywołane w przypadkach: (a) poprawnego i (b) błędnego wczytywania
+pliku?
+a) try (cała jego zawartość) oraz w finally  br.close(); -> jeżeli BufferedReader (br) został uprzednio utworzony (co jest prawdą w przypadku poprawnego wczytywania pliku), to w bloku finally zostanie zamknięty
+b)try, Wystąpienie wyjątku IOException => ioe.printStackTrace() - Wydrukowanie informacji o błędzie,
+finally - Wejście do bloku finally, sprawdzenie warunku br != null, w zależności od wyniku => br.close() - Zamknięcie obiektu BufferedReader lub 
+catch (IOException e) - przechwycenie drugiego wyjątku, jeśli wystąpi oraz e.printStackTrace() - wydrukowanie informacji o błędzie (jeśli wystąpi)
+
+(⇒2) Jaki problem rozwiązuje zastosowanie bloku try with resources?
+Zastosowanie bloku try with resources w języku Java rozwiązuje problem zarządzania zasobami, zwłaszcza w kontekście otwierania i zamykania plików. Korzystając z tego bloku, nie tzreba ręcznie zamykać obiektu BufferedReader w bloku finally, bo będzie on automatycznie zamknięty po zakończeniu bloku try. To eliminuje potrzebę dodatkowego kodu do obsługi zamknięcia zasobu.
+
+	public List<String[]> read() throws IOException {
+    		try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        		String line;
+        		while ((line = br.readLine()) != null) {
+            			rows.add(line.split(separator));
+        		}
+        	// Nie trzeba już ręcznie zamykać BufferedReader
+    		}
+    	return rows;
+	}
+
+
+
+
+(⇒3) Zaproponuj taką modyfikację metody read, aby nie występował w niej blok
+try i catch.
+Aby uniknąć użycia bloku try w metodzie read i przenieść obsługę wyjątku na poziom, na którym ta metoda jest wywoływana, można zmodyfikować sygnaturę metody, tak żeby deklarowała throws IOException. Dzięki temu kod obsługi błędów może być umieszczony w miejscu, gdzie metoda jest używana, zamiast w samej metodzie. 
+
+    public List<String[]> read() throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                rows.add(line.split(separator));
+            }
+            // Nie trzeba już ręcznie zamykać BufferedReader bo korzystam z
+            // bloku try with resources
+        }
+        return rows;
+    }
+
+    public static void main(String[] args) {
+        CSVReader csvReader = new CSVReader("oscar_age_male.csv", ",");
+        try {
+            System.out.println(csvReader.read());
+            System.out.println(csvReader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+(⇒4) Czy takie sprawdzenie dla liczb zmiennoprzecinkowych ma sens? Co
+należy zrobić, żeby porównanie było poprawne?
+Takie sprawdzenie ma sens, ale trzeba pamiętać o błędach zaokrągleń i precyzji. W przypadku liczb zmiennoprzecinkowych, dobrze użyć trzeciego argumentu metody assertEquals, który określa dopuszczalne odchylenie (delta), bo operacje na liczbach zmiennoprzecinkowych mogą prowadzić do niedokładnych wyników.
+(W kodzie, w przykładowym teście dla liczb zmiennoprzecinkowych użyte 0.001 jako dopuszczalne odchylenie)
