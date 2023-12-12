@@ -98,7 +98,7 @@ public class CSVReader {
      */
     public static void main(String[] args) {
         try {
-            CSVReader csvReader = new CSVReader("src\\resources/dane.csv", ",");
+            CSVReader csvReader = new CSVReader("src\\resources/oscar_age_male.csv", ",");
 
             List<String[]> result = csvReader.read();
 
