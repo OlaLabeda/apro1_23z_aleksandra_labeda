@@ -14,7 +14,7 @@ public class MapTest {
      */
     public static void main(String[] args) {
         //small island
-        Map map1 = MapReader.readMapFromFile("src\\simple_input.txt");
+        Map map1 = MapReader.readMapFromFile("src\\resources/simple_input.txt");
         ArrayList<Island> islands1 =  MapReader.findIslands(map1);
         System.out.println("Ilosc wysp: " + islands1.size());
         System.out.println("Rozmiary: ");
