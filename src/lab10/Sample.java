@@ -1,5 +1,8 @@
 package lab10;
-
+/**
+ * @author Aleksandra Łabęda,
+ *          Bartosz Czerwiński
+ */
 public class Sample {
     public int divide(int a, int b) throws ArithmeticException {
         return a / b;

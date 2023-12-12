@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Aleksandra Łabęda
+ * @author Aleksandra Łabęda,
+ *          Bartosz Czerwiński
  */
 
 /**

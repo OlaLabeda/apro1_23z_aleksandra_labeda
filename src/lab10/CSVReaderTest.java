@@ -1,12 +1,13 @@
 package lab10;
 
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * @author Aleksandra Łabęda,
+ *          Bartosz Czerwiński
+ */
 class CSVReaderTest {
 
     // Test for reading a valid CSV file with proper content

@@ -1,6 +1,6 @@
 Sprawozdanie lab 10 
 Aleksandra Łabęda
-
+Bartosz Czerwiński
 
 
 (⇒1) Które bloki instrukcji try (w metodzie read) i w jakiej kolejności zostaną

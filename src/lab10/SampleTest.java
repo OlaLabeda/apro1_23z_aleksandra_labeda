@@ -6,14 +6,13 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.testng.Assert.assertEquals;
-
 import java.util.stream.Stream;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testng.Assert.assertThrows;
+/**
+ * @author Aleksandra Łabęda,
+ *          Bartosz Czerwiński
+ */
 
 /**
  * a class containing oftwo simple tests for Sample class methods
