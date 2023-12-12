@@ -59,9 +59,14 @@ public class CSVReader {
                     throw new NoColumnCaptionException("Empty column name in the first row");
                 }
             }
+            rows.add(columnNames);
             // reading rows from files and dividing them using separator
             String line;
             while ((line = br.readLine()) != null) {
+                //ignores empty lines
+                if (line.equals("")) {
+                    continue;
+                }
                 String[] rowData = line.split(separator);
 
                 if (rowData.length != expectedColumnCount) {
@@ -78,7 +83,7 @@ public class CSVReader {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         rows.forEach(row -> {
-            sb.append(String.join(":", row));
+            sb.append(String.join(" : ", row));
             sb.append(System.lineSeparator());
         });
         return sb.toString();
@@ -92,9 +97,13 @@ public class CSVReader {
      */
     public static void main(String[] args) {
         try {
-            CSVReader csvReader = new CSVReader("src\\empty.csv", ",");
+            CSVReader csvReader = new CSVReader("src\\resources/dane.csv", ",");
+
             List<String[]> result = csvReader.read();
-            System.out.println(csvReader.read());
+
+            System.out.println(result);
+            System.out.println(csvReader);
+
         } catch (IOException | NoColumnCaptionException | InconsistentColumnNumberException |
                  InvalidCSVFileException e) {
             e.printStackTrace(); // lub inna forma obsługi błędu
